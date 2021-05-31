@@ -11,7 +11,6 @@ class Event(db.Model):
   custom_destination_id = db.Column(db.Integer, nullable=True)
   start = db.Column(db.Datetime, nullable=True)
   end = db.Column(db.Datetime, nullable=True)
-  title = db.Column(db.String(300), nullable=True)
 
 
 
