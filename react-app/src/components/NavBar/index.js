@@ -37,12 +37,12 @@ const NavBar = () => {
         <span className="nav-options">
           <li id="nav-login">
             <NavLink to="/login" exact={true} >
-              Log In
+              LOG IN
             </NavLink>
           </li>
           <li id="nav-signup">
             <NavLink to="/sign-up" exact={true} >
-              Sign Up
+              SIGN UP
             </NavLink>
           </li>
         </span>

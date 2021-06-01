@@ -32,20 +32,6 @@ const Itinerary = () => {
     
     const [events, setEvents] = useState(dummyEvents);
 
-//   const handleSelect = (event, e) => {
-//     const { start, end } = event;
-//     const data = { title: '', subject: '', start, end, allDay: false };
-//     setCalendarEvent(data);
-//   };
-
-//   const handleSelectEvent = (event, e) => {
-
-//     let { id, title, subject, start, end, allDay } = event;
-//     start = new Date(start);
-//     end = new Date(end);
-//     const data = { id, title, subject, start, end, allDay };
-//     setCalendarEvent(data);
-//   };
 
   const handleDragEvent = (event) => {
     //  console.log(event) {start: Sun May 30 2021 10:00:00 GMT-0500 (Central Daylight Time), end: Sun May 30 2021 12:00:00 GMT-0500 (Central Daylight Time), resourceId: null, event: {…}}
