@@ -1,6 +1,9 @@
 from .db import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
+from sqlalchemy.orm import relationship
+from sqlalchemy import Table, Column, Integer, ForeignKey
+
 
 class User(db.Model, UserMixin):
   __tablename__ = 'users'
@@ -10,6 +13,8 @@ class User(db.Model, UserMixin):
   email = db.Column(db.String(255), nullable = False, unique = True)
   hashed_password = db.Column(db.String(255), nullable = False)
 
+  custom_destinations = relationship("Custom_destination", back_populates="users")
+  trips = relationship("Trip", back_populates="users")
 
   @property
   def password(self):
