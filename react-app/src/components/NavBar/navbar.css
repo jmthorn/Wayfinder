@@ -35,11 +35,15 @@ nav {
 #nav-logout button {
   font-weight: 300;
   margin: 0 0 0 20px;
+  border: 0px solid black;
+  color: white;
+  background-color: black;
 }
 
 #nav-signup a,
 #nav-portfolio a,
-#nav-login a {
+#nav-login a,
+#nav-trips a {
   margin: 0em 2em;
   color: white;
   text-decoration: none;

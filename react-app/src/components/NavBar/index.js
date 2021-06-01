@@ -16,14 +16,9 @@ const NavBar = () => {
       sessionLinks = (
         <>
           <span className="nav-options">
-            <li id="nav-home">
-              <NavLink to="/" exact={true} activeClassName="active">
-                Home
-              </NavLink>
-            </li>
-            <li id="nav-portfolio">
-              <NavLink to="/" exact={true}>
-                Portfolio
+            <li id="nav-trips">
+              <NavLink to="/trips" exact={true}>
+                MY TRIPS
               </NavLink>
             </li>
             <li id="nav-logout">
