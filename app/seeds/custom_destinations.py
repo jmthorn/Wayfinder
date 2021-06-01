@@ -58,6 +58,17 @@ def seed_custom_destinations():
         duration=80,
         user_id=1
         )
+    D6 = Custom_destination(
+        name='Diamond Jubilee Tea Salon at Fortnum & Mason', 
+        city_id=6,
+        description="This historic spot for afternoon tea has been an upper crust British favorite since it began importing leaves from Asia in 1707. It's no wonder the beloved tearoom was reopened in 2012 by the Queen after a sensitive refit. The room retains a fittingly regal affect, decorated in the store’s trademark eau de nil (take that, Tiffany). There’s often a pianist tinkling away in the corner of the airy elegant room in the afternoon. The tea itself will leave even the most discerning of tea snobs with their mouths open. There are 50 different blends and tea sommeliers to help you chose which one is for you.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/61.jpeg",
+        address="4th Floor, Fortnum & Mason, 181 Piccadilly, St. James's, London W1A 1ER, United Kingdom",
+        lat= 55.74684553651231,
+        lng= 0.5625023010493078,
+        duration=80,
+        user_id=1
+        )
     # D4 = Custom_destination(
     #     name='', 
     #     city_id=1,
@@ -283,6 +294,7 @@ def seed_custom_destinations():
     db.session.add(D3)
     db.session.add(D4)
     db.session.add(D5)
+    db.session.add(D6)
 
 
 

@@ -504,6 +504,106 @@ def seed_default_destinations():
         lng= 139.6995510399978,
         duration=120
         )
+    D51 = Default_destination(
+        name='National Gallery', 
+        city_id=6,
+        description="Set in London’s busiest open space, Trafalgar Square, this is the grandmother of galleries with more than 2,300 paintings spanning the 13th to the 19th centuries (Heavyweights include Van Gogh’s Sunflowers, Velequez’s Rokeby Venus, and Constable’s six-foot long The Hay Wain). It gets packed at weekends, but its so large that you can usually find a quiet corner. Download one of the myriad audio tour options and explore. You can download an audio tour covering the museum's highlights, but you can also curate your own by selecting the paintings you want to see before you arrive.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/51.jpeg",
+        address="Trafalgar Square, London, WC2N 5DN, United Kingdom",
+        lat=51.5090625304149,
+        lng=-0.12832045964859304,
+        duration= 180
+        )
+    D52 = Default_destination(
+        name='The Globe Theater', 
+        city_id=6,
+        description="In London, every building and street has history. And Shakespeare's Globe, although a reconstruction of the original Globe Theatre—where many of William Shakespeare's plays were first staged and which burned down in 1613 during a performance of 'Henry VIII'—is no exception. The theater was rebuilt not far from its original site, using construction methods and materials as close to the original as possible, and to watch a performance here is to step back in time with the Royal Shakespeare Company.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/52.jpeg",
+        address="21 New Globe Walk, London, SE1 9DT, United Kingdom",
+        lat=51.50826500945794,
+        lng= -0.09716031546860657,
+        duration= 180
+        )
+    D53 = Default_destination(
+        name='Tower of London', 
+        city_id=6,
+        description="Built by William the Conqueror in 1066, this uncompromising slab of a building has been many things—including the site where Henry VIII ordered the execution of two of his wives. Now the Tower is most famous as the home of the Crown Jewels. Come, take a tour from one of the Beefeaters (offered every half hour), and gawp at the sparkling and the frightening alike.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/53.jpeg",
+        address="St Katharine's & Wapping, London, EC3N 4AB, United Kingdom",
+        lat=51.508272643396076,
+        lng= -0.07588492896058675,
+        duration=120
+        )
+    D54 = Default_destination(
+        name='Columbia Road Flower Market', 
+        city_id=6,
+        description="Weekly on Sundays, Columbia Road in East London's hip Shoreditch/Hackney neighborhood, transforms into a multicolored frenzy of stalls and flowers. This otherwise unassuming East End street is transformed into a swath of magnificent plant life, the air fragrant with blooms and the shouts of historic London's famous Cockney stallholders. It's as eccentric as it gets around here. You'll hear rushed deals and offers for a 'tenner' or 'fiver' (ten or five pounds) and because everything is so fresh, it's all gotta be gone by 2 p.m. ",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/54.jpeg",
+        address="Columbia Rd., London, E2 7RG, United Kingdom",
+        lat=51.52926914576562,
+        lng= -0.06983045964773821,
+        duration=30
+        )
+    D55 = Default_destination(
+        name='British Museum', 
+        city_id=6,
+        description="You could spend several lifetimes in the British Museum, Britain’s largest museum, without running out of artifacts to ponder. The collection is one of the largest in the world, arranged by location (Ancient Egypt, Asia, Africa, the Middle East, and Greece and Rome), and the list of big hitters includes the Rosetta Stone and other finds from Ancient Egypt, Asia and the Middle East. Come early on a weekday for a less crowded experience, pick one gallery and stick to it (or go for a guided “Highlights” tour), and plan to hit one of the day’s free 30-minute taster talks.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/55.jpeg",
+        address="Great Russell St., London, WC1B 3DG, United Kingdom",
+        lat=51.51954901912368,
+        lng= -0.12694832764078462,
+        duration=180
+        )
+    D56 = Default_destination(
+        name='The Shard', 
+        city_id=6,
+        description="Western Europe's tallest building at 309.6 metres, or 1,016 feet, high, The Shard houses London's first Shangri-la hotel, private apartments, offices and three high-end restaurants – Aqua Shard, Hutong and Oblix. All good reasons to visit of course but arguably the main one is the viewing gallery aka The View. Located on floors 68-72 and 244 meters above London, you have an unobstructed 360-degree, 40-mile view across the city.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/56.jpeg",
+        address="32 London Bridge St., London, SE1 9SG, United Kingdom",
+        lat=51.504666934275626,
+        lng= -0.08640344245272925,
+        duration=90
+        )
+    D57 = Default_destination(
+        name='Hawksmoor', 
+        city_id=6,
+        description="I feel naughty descending the stairs into Hawksmoor’s cavernous underground space for their legendary Sunday roast and a Bloody Mary or three. Naughty because the parquet flooring, exposed brick walls, low lighting and the fact it doubles as a neighborhood cocktail bar for Covent Garden’s locals makes it feel more hidden drinking den than posh restaurant. Plus the heady smells of steak coming from the kitchen go to your head. And let's be clear: Hawksmoor's food is commonplace let's be clear—steak/fries/booze with a little lobster thrown in—but the difference is they do it bloody well and serve with class.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/57.jpeg",
+        address="11 Langley St., London, WC2H 9JG, United Kingdom",
+        lat=51.513612901498,
+        lng= -0.1257967308124053,
+        duration= 60
+        )
+    D58 = Default_destination(
+        name='Borough Market', 
+        city_id=6,
+        description="The food hound's favorite London market (and the city's most atmospheric) occupies a sprawling site near London Bridge, both in a large covered area and spreading into the smaller maze of streets that surround it. Records show there’s been a market here since 1276 when it apparently caused traffic jams on London Bridge. What’s on offer? Gourmet goodies run the gamut and you’d be hard pressed not to find something you can’t get enough of and simply spend all day stuffing your face.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/58.jpeg",
+        address="8 Southwark St., London, SE1 1TL, United Kingdom",
+        lat=51.505481253319495,
+        lng= -0.09109794173932238,
+        duration=120
+        )
+    D59 = Default_destination(
+        name='Hampstead Heath', 
+        city_id=6,
+        description="Forget the perfect lawns of London's Royal Parks, Hampstead Heath, the vast and, in places wonderfully overgrown, tract of countryside just north of the rock ‘n’ roll neighborhood of Camden Town is the wild heart of the city and an undisputed highlight, so much so it's said to have inspired CS Lewis’s Narnia. The Heath covers 791 acres of woodland, playing fields, swimming ponds and meadows of tall grass perfect both for picnickers and couples in search of privacy. It’s truly beautiful.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/59.jpeg",
+        address="Hampstead Heath, London, United Kingdom",
+        lat=55.54918960925105,
+        lng= 0.1975010267139666,
+        duration=240
+        )
+    D60 = Default_destination(
+        name='Highgate Cemetery', 
+        city_id=6,
+        description="",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/60.jpeg",
+        address="Swain's Ln., London, N6 6PJ, United Kingdom",
+        lat=51.5681541673458,
+        lng= -0.14724256335014926,
+        duration=120
+        )
 
 
 
