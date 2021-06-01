@@ -1,0 +1,45 @@
+nav {
+  height: 64px;
+  width: 100%;
+  top: 0;
+  background-color: black;
+  margin: 0px;
+  position: relative;
+}
+
+#nav-list {
+  margin: 0;
+  padding: 10px 58px;
+  text-decoration: none;
+  display: flex;
+}
+
+#nav-list li {
+  display: inline;
+  margin-top: 0em;
+}
+
+.logo {
+  height: 3.4em;
+}
+
+.nav-options {
+  position: absolute;
+  right: 2em;
+  margin-top: 0.4em;
+  font-family: "Arsenal", sans-serif;
+}
+
+#nav-logout button {
+  font-weight: 300;
+  margin: 0 0 0 20px;
+}
+
+#nav-signup a,
+#nav-portfolio a,
+#nav-login a {
+  margin: 0em 2em;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}

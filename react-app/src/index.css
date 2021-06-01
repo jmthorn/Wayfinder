@@ -1,1 +1,10 @@
 /* TODO Add site wide styles */
+/* font-family: 'Arsenal', sans-serif;
+font-family: 'Libre Franklin', sans-serif;
+font-family: 'Playfair Display', serif; */
+
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Playfair Display", serif;
+}
