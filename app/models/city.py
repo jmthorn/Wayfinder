@@ -8,6 +8,7 @@ class City(db.Model):
 
   id = db.Column(db.Integer, primary_key = True)
   name = db.Column(db.String(40), nullable = False)
+  image_url = db.Column(db.String, nullable = True)
   coutry_id = db.Column(db.Integer, ForeignKey('countries.id'), nullable = False)
 
   countries = relationship("Country", back_populates="cities")

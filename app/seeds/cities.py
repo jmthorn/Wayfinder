@@ -4,14 +4,19 @@ from app.models import db, City
 def seed_cities():
 
     C1 = City(name='Austin', 
+                image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/Austin.jpeg",
                 coutry_id=1)
     C2 = City(name='Los Angeles', 
+                image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/LA.jpeg", 
                 coutry_id=1)
-    C3 = City(name='Seattle', 
+    C3 = City(name='Seattle',
+                image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/Seattle.jpeg", 
                 coutry_id=1)
     C4 = City(name='Bali', 
+                image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/Bali.jpeg", 
                 coutry_id=3)
     C5 = City(name='Tokyo', 
+                image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/Tokyo.jpeg", 
                 coutry_id=2)
 
 
