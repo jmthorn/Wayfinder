@@ -23,7 +23,6 @@ def destinations(cityId):
 @destinations_routes.route('/destination/<destinationName>')
 @login_required
 def destination(destinationName):
-    txt = "welcome-to-the-jungle"
 
     dest_list = destinationName.split("_")
     string=" "
