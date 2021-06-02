@@ -6,7 +6,7 @@ const setCities = (cities) => ({
     payload: cities
 });
 
-  
+//   get all cities
   export const getCities = () => async (dispatch)  => {
     const response = await fetch('/api/cities/')
 
@@ -14,12 +14,11 @@ const setCities = (cities) => ({
     if (data.errors) {
         return data;
     }
-    console.log("DATA", data)
     dispatch(setCities(data))
     return {};
   }
 
-const initialState = { cities: null };
+const initialState = { cities: null};
 
 
 export default function reducer(state=initialState, action) {

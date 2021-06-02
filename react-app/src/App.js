@@ -4,8 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
-import User from "./components/User";
+// import User from "./components/User";
+import Cities from "./components/Cities";
 import Splash from "./components/Splash";
+import Destinations from "./components/Destinations";
 import { authenticate } from "./store/session";
 import NavBar from "./components/NavBar";
 import Itinerary from "./components/Itinerary";
@@ -27,6 +29,18 @@ function App() {
     return null;
   }
 
+  let sessionlink;
+  if(user) { 
+    sessionlink =(
+        <Cities />
+    )
+  }else { 
+    sessionlink =(
+        <Splash />
+    )
+  }
+
+
   return (
     <BrowserRouter>
       <NavBar />
@@ -38,15 +52,15 @@ function App() {
           <SignUpForm />
         </Route>
         <Route path="/" exact={true} >
-          <Splash />
+          <Cities />
         </Route>
         {/* <ProtectedRoute path="/users/:userId" exact={true} >
           <User />
         </ProtectedRoute> */}
-        <ProtectedRoute path={`/itinerary/:tripId`} exact={true}>
-          <Itinerary />
+        <ProtectedRoute path={[`/destinations/:cityId`, "/destinations/:cityId/:destinationName"]} exact={true}>
+          <Destinations />
         </ProtectedRoute>
-        <ProtectedRoute path={`/cities/:cityId`} exact={true}>
+        <ProtectedRoute path={`/itinerary/:tripId`} exact={true}>
           <Itinerary />
         </ProtectedRoute>
       </Switch>

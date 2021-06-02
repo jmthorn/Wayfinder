@@ -47,7 +47,7 @@ const NavBar = () => {
 
 
   return (
-    <nav>
+    <nav id="main-nav">
       <ul id="nav-list">
         <li id="nav-home">
           <NavLink to="/" exact={true}>
