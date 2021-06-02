@@ -29,9 +29,9 @@ def seed():
 def undo():
     undo_users()
     undo_countries()
-    undo_events()
-    undo_default_destinations()
-    undo_custom_destinations()
-    undo_trips()
     undo_cities()
+    undo_trips()
+    undo_custom_destinations()
+    undo_default_destinations()
+    undo_events()
     # Add other undo functions here

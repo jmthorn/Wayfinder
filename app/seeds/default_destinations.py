@@ -657,6 +657,16 @@ def seed_default_destinations():
     db.session.add(D48)
     db.session.add(D49)
     db.session.add(D50)
+    db.session.add(D51)
+    db.session.add(D52)
+    db.session.add(D53)
+    db.session.add(D54)
+    db.session.add(D55)
+    db.session.add(D56)
+    db.session.add(D57)
+    db.session.add(D58)
+    db.session.add(D59)
+    db.session.add(D60)
 
 
     db.session.commit()
@@ -666,5 +676,5 @@ def seed_default_destinations():
 # TRUNCATE Removes all the data from the table, and resets
 # the auto incrementing primary key
 def undo_default_destinations():
-    db.session.execute('TRUNCATE users RESTART IDENTITY CASCADE;')
+    db.session.execute('TRUNCATE default_destinations RESTART IDENTITY CASCADE;')
     db.session.commit()

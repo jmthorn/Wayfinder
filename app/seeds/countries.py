@@ -20,5 +20,5 @@ def seed_countries():
 # TRUNCATE Removes all the data from the table, and resets
 # the auto incrementing primary key
 def undo_countries():
-    db.session.execute('TRUNCATE users RESTART IDENTITY CASCADE;')
+    db.session.execute('TRUNCATE countries RESTART IDENTITY CASCADE;')
     db.session.commit()
