@@ -52,7 +52,7 @@ function App() {
           <SignUpForm />
         </Route>
         <Route path="/" exact={true} >
-          <Cities />
+          {sessionlink}
         </Route>
         {/* <ProtectedRoute path="/users/:userId" exact={true} >
           <User />
