@@ -8,5 +8,9 @@ body {
   margin: 0px;
   padding: 0px;
   font-family: "Playfair Display", serif;
-  bottom: 0;
+  height: 100%;
+}
+
+body > div {
+  height: 100%;
 }

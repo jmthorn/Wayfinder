@@ -1,5 +1,6 @@
 #destinations-page-container {
   display: flex;
+  height: 100%;
 }
 
 #destination-nav {
@@ -12,4 +13,14 @@
 #destination-nav a {
   color: inherit;
   text-decoration: none;
+  height: 100%;
+}
+
+#destination-nav div {
+  margin: 2em 2em;
+  font-size: 18px;
+}
+
+.dest-nav-line {
+  border-bottom: 1px solid lightgray;
 }
