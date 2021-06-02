@@ -18,3 +18,20 @@ def destinations(cityId):
 
     return {"default_destinations": [destination.to_dict() for destination in default_destinations], "custom_destinations": [destination.to_dict() for destination in custom_destinations]}
 
+
+
+@destinations_routes.route('/destination/<destinationName>')
+@login_required
+def destination(destinationName):
+    txt = "welcome-to-the-jungle"
+
+    dest_list = destinationName.split("_")
+    string=" "
+    dest_name = string.join(dest_list)
+    c_destination= Custom_destination.query.filter(Custom_destination.name == str(dest_name)).first()
+    d_destination= Default_destination.query.filter(Default_destination.name == str(dest_name)).first()
+
+    if(d_destination):
+        return {"destination": d_destination.to_dict()}
+    if(c_destination):
+        return {"destination": c_destination.to_dict()}
