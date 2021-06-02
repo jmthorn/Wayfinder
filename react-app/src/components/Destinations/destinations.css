@@ -5,7 +5,7 @@
 
 #destination-nav {
   flex: 0 0 400px;
-  height: 100%;
+  max-height: 95%;
   overflow-y: auto;
   border-right: 1px solid lightgray;
 }
@@ -16,11 +16,28 @@
   height: 100%;
 }
 
-#destination-nav div {
+.destination {
   margin: 2em 2em;
   font-size: 18px;
 }
 
 .dest-nav-line {
   border-bottom: 1px solid lightgray;
+}
+
+#add-dest {
+  margin: 2em 2em 5em 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+#add-dest button {
+  margin-top: 0.3em;
+  font-size: 40px;
+  background-color: white;
+  border: 0px solid transparent;
 }

@@ -26,18 +26,21 @@ const Destinations = () => {
         <nav id="destination-nav">
             {destinations?.default_destinations?.map((destination) =>  (
                 <NavLink key={destination.name} to={`/destinations/${cityId}/${destination.name.split(" ").join("_")}`}>
-                    <div>{destination.name}</div>
+                    <div className="destination">{destination.name}</div>
                     <div className="dest-nav-line"></div>
                 </NavLink>
             ))}
             {destinations?.custom_destinations?.map((destination) =>  (
                 <NavLink key={destination.name} to={`/destinations/${cityId}/${destination.name.split(" ").join("_")}`}>
-                    <div>{destination.name}</div>
+                    <div className="destination">{destination.name}</div>
                     <div className="dest-nav-line"></div>
 
                 </NavLink>
             ))}
-            <div>ADD DESTINATION</div>
+            <div id="add-dest">
+                <div>Add Destination</div>
+                <button>+</button>
+            </div>
         </nav>
         <Route path="/destinations/:cityId/:destinationName">
             <Destination_Detail />
