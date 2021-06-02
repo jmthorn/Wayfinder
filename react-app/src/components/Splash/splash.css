@@ -1,0 +1,89 @@
+#splash-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#splash-container h1 {
+  font-family: "Arsenal", sans-serif;
+  font-size: 4em;
+  margin-bottom: 0em;
+}
+
+#splash-container p {
+  margin-bottom: 2em;
+}
+
+#splash-container h3 {
+  font-size: 2em;
+  margin: 0.5em;
+}
+
+.splash-line {
+  border-bottom: 1px solid lightgrey;
+  width: 70%;
+  margin: 0em;
+}
+
+#cities-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 80%;
+  justify-content: center;
+}
+
+.city-container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  justify-content: center;
+  align-items: center;
+  margin: 3em;
+}
+
+.city-image-container {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.city-container img {
+  width: auto;
+  max-height: 300px;
+  display: block;
+}
+
+.city-info {
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  margin-top: 1em;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.city-name {
+  text-align: start;
+  font-size: 18px;
+}
+
+.city-line {
+  border-bottom: 1px solid lightgrey;
+  width: 7em;
+  margin-top: 1em;
+}
+
+.add-button {
+  font-size: 3em;
+  font-weight: 100;
+  background-color: white;
+  border: 0px solid black;
+  position: absolute;
+  right: 0.2em;
+  top: -0.25em;
+}

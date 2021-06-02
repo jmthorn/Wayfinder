@@ -46,9 +46,6 @@ function App() {
         <ProtectedRoute path={`/itinerary/:tripId`} exact={true}>
           <Itinerary />
         </ProtectedRoute>
-        <ProtectedRoute path="/cities" exact={true}>
-          <Itinerary />
-        </ProtectedRoute>
         <ProtectedRoute path={`/cities/:cityId`} exact={true}>
           <Itinerary />
         </ProtectedRoute>
