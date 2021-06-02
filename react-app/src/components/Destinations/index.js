@@ -25,17 +25,17 @@ const Destinations = () => {
     <div id="destinations-page-container">
         <nav>
             {destinations?.default_destinations?.map((destination) =>  (
-                <NavLink key={destination.name} to={`/cities/${destination.id}`}>
+                <NavLink key={destination.name} to={`/destinations/${cityId}/${destination.name.split(" ").join("-")}`}>
                     <div>{destination.name}</div>
                 </NavLink>
             ))}
             {destinations?.custom_destinations?.map((destination) =>  (
-                <NavLink key={destination.name} to={`/destinations/${destination.id}`}>
+                <NavLink key={destination.name} to={`/destinations/${cityId}/${destination.name.split(" ").join("-")}`}>
                     <div>{destination.name}</div>
                 </NavLink>
             ))}
         </nav>
-        <Route path="/destinations/:destinationId">
+        <Route path="/destinations/:cityId/:destinationName">
             <Destination_Detail />
         </Route>
     </div>

@@ -57,7 +57,7 @@ function App() {
         {/* <ProtectedRoute path="/users/:userId" exact={true} >
           <User />
         </ProtectedRoute> */}
-        <ProtectedRoute path={`/destinations/:cityId`} exact={true}>
+        <ProtectedRoute path={[`/destinations/:cityId`, "/destinations/:cityId/:destinationName"]} exact={true}>
           <Destinations />
         </ProtectedRoute>
         <ProtectedRoute path={`/itinerary/:tripId`} exact={true}>
