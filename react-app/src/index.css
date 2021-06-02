@@ -3,8 +3,10 @@
 font-family: 'Libre Franklin', sans-serif;
 font-family: 'Playfair Display', serif; */
 
+html,
 body {
   margin: 0px;
   padding: 0px;
   font-family: "Playfair Display", serif;
+  bottom: 0;
 }

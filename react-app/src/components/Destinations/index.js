@@ -23,7 +23,7 @@ const Destinations = () => {
 
   return (
     <div id="destinations-page-container">
-        <nav>
+        <nav id="destination-nav">
             {destinations?.default_destinations?.map((destination) =>  (
                 <NavLink key={destination.name} to={`/destinations/${cityId}/${destination.name.split(" ").join("_")}`}>
                     <div>{destination.name}</div>
@@ -34,6 +34,7 @@ const Destinations = () => {
                     <div>{destination.name}</div>
                 </NavLink>
             ))}
+            <div>ADD DESTINATION</div>
         </nav>
         <Route path="/destinations/:cityId/:destinationName">
             <Destination_Detail />

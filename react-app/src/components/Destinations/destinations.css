@@ -1,0 +1,15 @@
+#destinations-page-container {
+  display: flex;
+}
+
+#destination-nav {
+  flex: 0 0 400px;
+  height: 100%;
+  overflow-y: auto;
+  border-right: 1px solid lightgray;
+}
+
+#destination-nav a {
+  color: inherit;
+  text-decoration: none;
+}

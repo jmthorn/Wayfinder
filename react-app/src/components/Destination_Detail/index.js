@@ -20,14 +20,15 @@ const Destinations = () => {
 
   return (
     <div id="destinations-detail-container">
-        <div id="nav-bar">
+        <div id="destination-image">
           <img src={destination?.destination.image_url}></img>
         </div>
         <div id="destination-info">
-          <div>{destination?.destination.name}</div>
-          <div>{destination?.destination.address}</div>
-          <div>{destination?.destination.description}</div>
-          <div>Duration: {Math.round(((destination?.destination?.duration)/60)*100)/100} Hrs.</div>
+          <div id="dest-name">{destination?.destination.name}</div>
+          <div id="dest-line"></div>
+          <div id="dest-address">{destination?.destination.address}</div>
+          <div id="dest-desc">{destination?.destination.description}</div>
+          <div id="dest-dur">Duration: {Math.round(((destination?.destination?.duration)/60)*100)/100} Hrs.</div>
         </div>
     </div>
   );
