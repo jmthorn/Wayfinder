@@ -20,6 +20,7 @@ class City(db.Model):
     return {
       "id": self.id,
       "name": self.name,
-      "coutry_id": self.coutry_id
+      "coutry_id": self.coutry_id,
+      "image_url":self.image_url,
     }
 
