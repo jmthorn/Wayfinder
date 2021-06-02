@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Calendar, momentLocalizer, Views } from 'react-big-calendar'
-import { DragDropContext } from "react-dnd";
+import { Calendar, momentLocalizer } from 'react-big-calendar'
+// import { DragDropContext } from "react-dnd";
 import withDragAndDrop from "react-big-calendar/lib/addons/dragAndDrop";
 import moment from 'moment'
 import "react-big-calendar/lib/css/react-big-calendar.css"
@@ -9,8 +9,8 @@ const Itinerary = () => {
 
   const localizer = momentLocalizer(moment)
   const DnDCalendar = withDragAndDrop(Calendar);
-  const [calendarEvent, setCalendarEvent] = useState({});
-  let today = new Date();
+  // const [calendarEvent, setCalendarEvent] = useState({});
+  // let today = new Date();
   
   
   let dummyEvents = [
@@ -30,7 +30,7 @@ const Itinerary = () => {
         },
     ];
     
-    const [events, setEvents] = useState(dummyEvents);
+    // const [events, setEvents] = useState(dummyEvents);
 
 
   const handleDragEvent = (event) => {

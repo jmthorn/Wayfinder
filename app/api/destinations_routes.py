@@ -6,18 +6,10 @@ from app.models import Custom_destination
 from sqlalchemy import and_
 
 
-cities_routes = Blueprint('cities', __name__)
+destinations_routes = Blueprint('destinations', __name__)
 
 
-@cities_routes.route('/')
-@login_required
-def cities():
-    cities = City.query.all()
-    return {"cities": [city.to_dict() for city in cities]}
-
-
-
-@cities_routes.route('/<cityId>')
+@destinations_routes.route('/<cityId>')
 @login_required
 def destinations(cityId):
     userId = current_user.id

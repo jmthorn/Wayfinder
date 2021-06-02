@@ -24,11 +24,11 @@
   font-family: arial;
   font-size: 0.8em;
   background-color: #fefefe;
-  margin: 20% auto; /* 15% from the top and centered */
+  margin: 20% auto;
   padding: 20px;
   border: 1px solid #888;
   border-radius: 10px;
-  width: 500px; /* Could be more or less, depending on screen size */
+  width: 500px;
   height: auto;
   position: relative;
   display: flex;
