@@ -14,6 +14,7 @@
 }
 
 #destination-image img {
+  min-width: 100%;
   max-width: 100%;
 }
 
