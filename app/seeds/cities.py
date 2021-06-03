@@ -22,7 +22,7 @@ def seed_cities():
                 image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/London.jpeg", 
                 coutry_id=4)
     C7 = City(name='Cape Town', 
-                image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/London.jpeg", 
+                image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/Cape_Town.jpeg", 
                 coutry_id=5)
     # C8 = City(name='', 
     #             image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/.jpeg", 
