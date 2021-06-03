@@ -41,7 +41,7 @@
   width: 300px;
   justify-content: center;
   align-items: center;
-  margin: 3em;
+  margin: 2em;
 }
 
 .city-image-container {
@@ -51,6 +51,7 @@
   display: flex;
   align-content: center;
   justify-content: center;
+  margin-top: 0em;
 }
 
 .city-container img {
