@@ -67,7 +67,7 @@
   padding: 0.5em 1em;
 }
 
-.modale-to {
+.modal-to {
   margin-top: 2em;
   padding: 0.5em 1em;
 }
@@ -94,4 +94,12 @@
   padding: 1em 2em;
   color: white;
   background-color: black;
+}
+
+.modal-error {
+  margin-top: 2em;
+  margin-bottom: 0px;
+  color: rgb(109, 7, 7);
+  font-weight: 500;
+  font-size: 18px;
 }
