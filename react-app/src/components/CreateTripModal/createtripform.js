@@ -31,8 +31,9 @@ function CreateTripForm({cityId}) {
           <form onSubmit={(e) => handleSubmit(e)}>
               <label>When are you going to {chosenCity.name}?
                 <div className="modal-date-inputs">
-                    <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
-                    <DatePicker selected={endDate} onChange={(date) => setEndDate(date)} />
+                    <DatePicker selected={startDate} placeholderText="Start Date" onChange={(date) => setStartDate(date)} />
+                    <div className="modale-to">to</div>
+                    <DatePicker selected={endDate} placeholderText="End Date" onChange={(date) => setEndDate(date)} />
                 </div>
               </label>
               <button className="modal-button" type="submit">BOOK</button>
