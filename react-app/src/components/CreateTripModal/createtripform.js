@@ -1,41 +1,41 @@
 // frontend/src/components/LoginFormModal/index.js
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import {createTrip} from '../../store/trips'
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
 
 
 
 function CreateTripForm({cityId}) {
 
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
   const cities = useSelector(state => state.cities.cities)
-  const chosenCity = cities.cities.filter((city) => city.id === cityId)
+  const chosenCity = cities.cities.filter((city) => city.id === cityId)[0]
+  const chosenCityId = chosenCity.id
   const dispatch = useDispatch();
   const [errors, setErrors] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setErrors([]);
-    return dispatch().catch(
-      async (res) => {
-        const data = await res.json();
-        if (data && data.errors) setErrors(data.errors);
-      }
-    );
+    return dispatch(createTrip(chosenCityId, startDate, endDate))
   };  
-
 
   return (
     <>
       <h2 className="modal-title">Create a Trip</h2>
       <div className="modal-line"></div>
       <div className="modal-form">
-          <form onSubmit={handleSubmit}>
-              <label for="">When are you going to {chosenCity[0].name}?
+          <form onSubmit={(e) => handleSubmit(e)}>
+              <label>When are you going to {chosenCity.name}?
                 <div className="modal-date-inputs">
-                    <input placeholder="Start Date"></input>
-                    <input placeholder="End Date"></input>
+                    <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
+                    <DatePicker selected={endDate} onChange={(date) => setEndDate(date)} />
                 </div>
               </label>
-              <button type="submit">BOOK</button>
+              <button className="modal-button" type="submit">BOOK</button>
           </form>
       </div>
     </>

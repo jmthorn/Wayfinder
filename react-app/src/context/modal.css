@@ -78,7 +78,7 @@
   outline-width: 0px;
 }
 
-#modal-content button {
+.modal-button {
   border: 2.5px solid black;
   padding: 1em 2em;
   background-color: white;
