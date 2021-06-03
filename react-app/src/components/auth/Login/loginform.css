@@ -34,7 +34,7 @@
 #login-form input {
   flex: 3 0 0;
   margin: 0.6em 0em 1em;
-  border: 3px solid black;
+  border: 2.5px solid black;
   background-color: transparent;
 }
 
