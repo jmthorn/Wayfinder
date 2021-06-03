@@ -1,0 +1,64 @@
+#signup-container {
+  background-image: url("../../../images/signup.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 50em;
+  display: flex;
+  justify-content: center;
+}
+
+#signup-container form {
+  border: 4px solid black;
+  width: 40%;
+  height: auto;
+  padding: 2em;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#signup-form div {
+  width: 80%;
+  display: flex;
+}
+
+#signup-form label {
+  flex: 2 0 0;
+  margin-top: 1em;
+}
+
+#signup-form input {
+  flex: 3 0 0;
+  margin: 0.5em 0em 0em;
+  border: 3px solid black;
+}
+
+.auth-line {
+  border-bottom: 1px solid rgb(105, 105, 105);
+  width: 40%;
+  margin-bottom: 2em;
+}
+
+.auth-button {
+  width: 8em;
+  margin: 0.5em 0em;
+  border: 3px solid black;
+  background-color: white;
+  padding: 0.5em 1em;
+}
+
+.auth-button:active {
+  background-color: black;
+  color: white;
+}
+
+.auth-buttons {
+  padding: 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
