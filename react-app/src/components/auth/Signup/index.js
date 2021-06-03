@@ -49,7 +49,7 @@ const SignUpForm = () => {
       <form id="signup-form" onSubmit={onSignUp}>
         <h1>Sign Up</h1>
         <div className="auth-line"></div>
-          <div>
+          <div className="auth-errors">
             {errors.map((error) => (
               <div>{error}</div>
             ))}
