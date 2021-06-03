@@ -21,6 +21,7 @@ const Splash = () => {
       </div>
       <div id="splash-graphic">
         <img src={SplashGraphic}></img>
+        <p>We're here to help you discover new destinations around the world. After adding each destination to your trip, manage them in your trip's itinerary to optimize your travel experience.</p>
       </div>
     </div>
   );

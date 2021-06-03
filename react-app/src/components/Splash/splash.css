@@ -14,12 +14,12 @@
   height: 60%;
   width: 100%;
   text-align: center;
-  color: rgb(71, 71, 71);
-  font-size: 45px;
 }
 
 #splash-main-image div {
   margin: 2em 0em 1em 0em;
+  color: rgb(71, 71, 71);
+  font-size: 45px;
 }
 
 #splash-main-image button {
@@ -35,7 +35,21 @@
   border: 3px solid black;
 }
 
+#splash-graphic {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 #splash-graphic img {
   margin-top: 2em;
   height: 12em;
+}
+
+#splash-graphic p {
+  margin: 0em 0em 1em 0em;
+  width: 600px;
+  text-align: center;
+  font-size: 16px;
 }

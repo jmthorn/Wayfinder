@@ -11,6 +11,7 @@ import Destinations from "./components/Destinations";
 import { authenticate } from "./store/session";
 import NavBar from "./components/NavBar";
 import Itinerary from "./components/Itinerary";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -64,6 +65,7 @@ function App() {
           <Itinerary />
         </ProtectedRoute>
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 }
