@@ -21,6 +21,12 @@ def seed_cities():
     C6 = City(name='London', 
                 image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/London.jpeg", 
                 coutry_id=4)
+    C7 = City(name='Cape Town', 
+                image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/London.jpeg", 
+                coutry_id=5)
+    # C8 = City(name='', 
+    #             image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/.jpeg", 
+    #             coutry_id=6)
 
 
     db.session.add(C1)
@@ -29,6 +35,8 @@ def seed_cities():
     db.session.add(C4)
     db.session.add(C5)
     db.session.add(C6)
+    db.session.add(C7)
+    # db.session.add(C8)
 
     db.session.commit()
 

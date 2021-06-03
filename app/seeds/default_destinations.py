@@ -597,13 +597,213 @@ def seed_default_destinations():
     D60 = Default_destination(
         name='Highgate Cemetery', 
         city_id=6,
-        description="",
+        description="A graveyard is always a somber place, but Highgate is also a celebratory one. You’ll recognize parts of it if you’ve seen Francis Ford Coppola’s ‘Dracula,’ and you'll find the final resting place of writers like George Eliot and Douglas Adams, science pioneers like Michael Faraday and pop culture icons like George Michael (although his grave isn't yet open to the public). And believe it or not, for somewhere with so many legendary men and women buried in it, Highgate Cemetery is one of the least visited of London’s landmarks. But those who do come for both the ghostly mystery of the place itself, as well as fans of the celebrity dead.",
         image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/60.jpeg",
         address="Swain's Ln., London, N6 6PJ, United Kingdom",
         lat=51.5681541673458,
         lng= -0.14724256335014926,
         duration=120
         )
+    D61 = Default_destination(
+        name='Camps Bay Beach', 
+        city_id=7,
+        description="Camps Bay is Cape Town's party beach: A beautiful, long stretch of white sand bordered by a promenade full of restaurants, clubs, and hotels for when you need a break from the sun. It's fun and lively and can feel a bit crowded—and, fine, maybe a bit tacky—during the peak summer months of December and January. But the setting is absolutely gorgeous, with the Twelve Apostles mountain range making for a craggy backdrop. Amid the loud beach bars you'll find some dining gems, so it's definitely worth a stop.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/61.1.jpeg",
+        address="Camps Bay Beach, Cape Town, 8005, South Africa",
+        lat=-30.779335463588588,
+        lng=18.008667008486544,
+        duration= 180
+        )
+    D62 = Default_destination(
+        name='Zeitz Museum of Contemporary Art Africa', 
+        city_id=7,
+        description="The Zeitz MOCAA is one of the most important new museums in the global art world: It's the first-ever major institution dedicated exclusively to artists from across the African continent and diaspora. It's also a must-see for architecture buffs; the building, a reimagining of an abandoned silo building, was designed by UK starchitect Thomas Heatherwick. The result is a soaring, sculptural marvel that really is a work of art in itself. It's modern and industrial, and Capetonians are rightly proud of the new landmark building.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/62.jpeg",
+        address="Zeitz Museum of Contemporary Art Africa, V&A Waterfront Silo District, S Arm Rd, Waterfront, Cape Town, 8001, South Africa",
+        lat=-31.53030866304981,
+        lng= 18.382730798942546,
+        duration= 90
+        )
+    D63 = Default_destination(
+        name='The Neighbourgoods Market', 
+        city_id=7,
+        description="Neighbourgoods Market, in Woodstock, is a pioneering market for South Africa; since its inception in 2006, there's been a boom in markets taking over disused spaces in vibrant urban enclaves across the country. But Neighbourgoods remains the one to beat: There's a diverse range of food stalls from around the world, serving ostrich burgers to paella to dim sum, and local artisans sell their fresh jams, cheeses, and biltong (jerky) alongside. As you navigate the entire complex, with live musicians playing in the background, you'll also find a warren of stalls by emerging designers selling chic dresses, sunglasses, hats, and jewelry.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/63.jpeg",
+        address="373 Albert Rd, Woodstock, Cape Town, 7925, South Africa",
+        lat=-31.127074123482725,
+        lng= 17.943232302093573,
+        duration=120
+        )
+    D64 = Default_destination(
+        name='Lion\'s Head', 
+        city_id=7,
+        description="The neighbor to the much more formidable Table Mountain, Lion's Head is no shrinking violet: The striking conical spire adds a distinctive quirk to Cape Town's skyline. While many like to hike both, Lion's Head is a much quicker and easier climb, and the trail wraps around on its way to the top, which means your view is constantly changing—just what you need to keep you energized when you start to feel winded. And best of all, Table Mountain makes up part of your view.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/64.jpeg",
+        address="Lion's Head, Signal Hill, Cape Town, 8001, South Africa",
+        lat=-31.680745865870257,
+        lng= 18.541691167047524,
+        duration=180
+        )
+    D65 = Default_destination(
+        name='Greenmarket Square', 
+        city_id=7,
+        description="This lively spot is more about soaking in the ambience rather than sourcing quality goods. One of South Africa's most historic markets—the cobbled square was set up in the late 1600s—Greenmarket is now a bustling flea with vendors selling everything from colorful wall hangings and paintings to necklaces to toys, all while musicians supply a festive soundtrack. It's the kind of place you can expect to bargain a bit, but within reason, of course, and afterward stroll to one of countless cute area cafés set in old heritage buildings for a cappuccino.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/65.jpeg",
+        address="Burg St &, Longmarket St, Cape Town City Centre, Cape Town, 8000, South Africa",
+        lat=-31.380750783054506,
+        lng=  18.20571062739321,
+        duration=60
+        )
+    D66 = Default_destination(
+        name='Cape of Good Hope', 
+        city_id=7,
+        description="No trip to Cape Town is complete without the half-day Cape Peninsula drive, heading to the southwesternmost point of the African continent. This is where European ships rounded Africa en route to the east, and thanks to the rocky shores and temperamental waters, many never made it past. It's now a nature reserve, where you can go on hikes, climb up to the lighthouse at Cape Point, and pose with a sign at the Cape of Good Hope. Along the way, you'll likely spot some animals by the side of the road.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/66.jpeg",
+        address="Cape Point Rd, Cape Town, 8001, South Africa",
+        lat=-31.84171247660735,
+        lng= 18.583734640866272,
+        duration=240
+        )
+    D67 = Default_destination(
+        name='Robben Island Museum', 
+        city_id=7,
+        description="This island, about five miles off the coast of Cape Town, had been a notorious penal colony since the Dutch and English colonial times. But its main notoriety comes from the fact that this is where many iconic South African freedom fighters were imprisoned—chief among them Nelson Mandela, who spent 18 years of his 27-year sentence at Robben Island. Visitors board a ferry from the V&A Waterfront (they should book in advance, as boats frequently sell out), then take a bus tour around the island before walking through the prison itself.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/67.jpeg",
+        address="Robben Island, Cape Town, 7400, South Africa",
+        lat=-33.7988711821586,
+        lng= 18.372199671345605,
+        duration= 180
+        )
+    D68 = Default_destination(
+        name='Table Mountain', 
+        city_id=7,
+        description="It's practically impossible to find a spot in Cape Town that's not in the shadow of Table Mountain: This majestic plateau dominates the city's skyline and makes a photogenic backdrop to virtually any picture. But people don't just gaze upon it; you can scale the stately 3,500-foot-tall behemoth in many ways. Choose from any number of hiking trails—they range from challenging to near death-defying, so choose wisely—or, if you're the more easy-going (read: lazy) type, take the cable car up and down in five minutes flat each way.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/68.jpeg",
+        address="Maclear's Beacon, Table Mountain (Nature Reserve), Cape Town, South Africa",
+        lat=-30.930683349009453,
+        lng= 18.384172786968612,
+        duration=240
+        )
+    D69 = Default_destination(
+        name='Kirstenbosch National Botanical Garden', 
+        city_id=7,
+        description="This is one of our favorite places in Cape Town: a beautiful, serene expanse on the slopes of Table Mountain, with more than 7,000 plant species, most of which are unique to this part of the world (keep an eye out for all kinds of proteas, birds of paradise, wild gardenia, and much more). Scattered throughout the 1,300 acres are various artwork and sculptures, and in summer the park hosts concerts and events against the stunning mountain backdrop.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/69.jpeg",
+        address="Rhodes Dr, Newlands, Cape Town, 7735, South Africa",
+        lat=-31.83164340881742,
+        lng= 18.21194986552304,
+        duration=240
+        )
+    D70 = Default_destination(
+        name='District Six Museum', 
+        city_id=7,
+        description="District Six was a vibrant, mixed-race community in Cape Town until its residents were forcibly evicted by the apartheid government in the 1970s. The original residents have dispersed far and wide, and now this intimate museum stands as a memorial to them. The entire collection of the two-story venue is created from personal artifacts from former residents: pictures, artwork, letters, news clippings, and narrations recorded on tape. While it's certainly not off the beaten path, it makes for a poignant counterpart to Robben Island, allowing you to understand some of what common people endured during apartheid.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/70.jpeg",
+        address="25A Buitenkant St, Zonnebloem, Cape Town, 8000, South Africa",
+        lat=-31.380889005859764,
+        lng= 18.38327035863844,
+        duration=120
+        )
+    # D71 = Default_destination(
+    #     name='', 
+    #     city_id=8,
+    #     description="",
+    #     image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/71.jpeg",
+    #     address="",
+    #     lat=,
+    #     lng=-,
+    #     duration= 180
+    #     )
+    # D72 = Default_destination(
+    #     name='', 
+    #     city_id=8,
+    #     description="",
+    #     image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/72.jpeg",
+    #     address="",
+    #     lat=,
+    #     lng= ,
+    #     duration= 180
+    #     )
+    # D73 = Default_destination(
+    #     name='', 
+    #     city_id=8,
+    #     description="",
+    #     image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/73.jpeg",
+    #     address="",
+    #     lat=,
+    #     lng= ,
+    #     duration=120
+    #     )
+    # D74 = Default_destination(
+    #     name='', 
+    #     city_id=8,
+    #     description="",
+    #     image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/74.jpeg",
+    #     address="",
+    #     lat=,
+    #     lng= ,
+    #     duration=30
+    #     )
+    # D75 = Default_destination(
+    #     name='', 
+    #     city_id=8,
+    #     description="",
+    #     image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/75.jpeg",
+    #     address="",
+    #     lat=,
+    #     lng= ,
+    #     duration=180
+    #     )
+    # D76 = Default_destination(
+    #     name='', 
+    #     city_id=8,
+    #     description="",
+    #     image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/76.jpeg",
+    #     address="",
+    #     lat=,
+    #     lng=,
+    #     duration=90
+    #     )
+    # D77 = Default_destination(
+    #     name='', 
+    #     city_id=8,
+    #     description="",
+    #     image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/77.jpeg",
+    #     address="",
+    #     lat=,
+    #     lng= ,
+    #     duration= 60
+    #     )
+    # D78 = Default_destination(
+    #     name='', 
+    #     city_id=8,
+    #     description="",
+    #     image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/78.jpeg",
+    #     address="",
+    #     lat=,
+    #     lng= ,
+    #     duration=120
+    #     )
+    # D79 = Default_destination(
+    #     name='', 
+    #     city_id=8,
+    #     description="",
+    #     image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/79.jpeg",
+    #     address="",
+    #     lat=,
+    #     lng= ,
+    #     duration=240
+    #     )
+    # D80 = Default_destination(
+    #     name='', 
+    #     city_id=8,
+    #     description="",
+    #     image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/80.jpeg",
+    #     address="",
+    #     lat=,
+    #     lng= ,
+    #     duration=120
+    #     )
 
 
 
@@ -667,6 +867,26 @@ def seed_default_destinations():
     db.session.add(D58)
     db.session.add(D59)
     db.session.add(D60)
+    db.session.add(D61)
+    db.session.add(D62)
+    db.session.add(D63)
+    db.session.add(D64)
+    db.session.add(D65)
+    db.session.add(D66)
+    db.session.add(D67)
+    db.session.add(D68)
+    db.session.add(D69)
+    db.session.add(D70)
+    # db.session.add(D71)
+    # db.session.add(D72)
+    # db.session.add(D73)
+    # db.session.add(D74)
+    # db.session.add(D75)
+    # db.session.add(D76)
+    # db.session.add(D77)
+    # db.session.add(D78)
+    # db.session.add(D79)
+    # db.session.add(D80)
 
 
     db.session.commit()

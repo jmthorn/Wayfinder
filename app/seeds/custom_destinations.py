@@ -69,223 +69,29 @@ def seed_custom_destinations():
         duration=80,
         user_id=1
         )
-    # D4 = Custom_destination(
-    #     name='', 
-    #     city_id=1,
-    #     description="",
-    #     image_url="",
-    #     address="",
-    #     duration=""
-    #     )
-    # D5 = Custom_destination(
-    #     name='', 
-    #     city_id=1,
-    #     description="",
-    #     image_url="",
-    #     address="",
-    #     duration=""
-    #     )
-    # D6 = Custom_destination(
-    #     name='', 
-    #     city_id=1,
-    #     description="",
-    #     image_url="",
-    #     address="",
-    #     duration=""
-    #     )
-    # D7 = Custom_destination(
-    #     name='', 
-    #     city_id=1,
-    #     description="",
-    #     image_url="",
-    #     address="",
-    #     duration=""
-    #     )
+    D7 = Custom_destination(
+        name='Company\'s Garden', 
+        city_id=7,
+        description="This historic site was at the heart of the first European settlement in Cape Town: The colony was set up to serve as a refreshment station for ships passing the tip of Africa to head to the east, and the Company's Garden was started as a farm to grow produce for them. Now it's a peaceful oasis in the middle of the Central Business District, with a series of beautifully manicured gardens and green areas where you'll find children chasing squirrels, office workers on lunch break, and any number of performers.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/7.11.jpeg",
+        address="15 Queen Victoria St, Cape Town City Centre, Cape Town, 8001, South Africa",
+        lat= -31.080244907759603,
+        lng= 18.55564223006794,
+        duration=120,
+        user_id=1
+        )
     # D8 = Custom_destination(
     #     name='', 
-    #     city_id=1,
+    #     city_id=8,
     #     description="",
-    #     image_url="",
+    #     image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/81.1.jpeg",
     #     address="",
-    #     duration=""
-    #     )
-    # D9 = Custom_destination(
-    #     name='', 
-    #     city_id=1,
-    #     description="",
-    #     image_url="",
-    #     address="",
-    #     duration=""
-    #     )
-    # D10 = Custom_destination(
-    #     name='', 
-    #     city_id=1,
-    #     description="",
-    #     image_url="",
-    #     address="",
-    #     duration=""
+    #     lat= ,
+    #     lng= ,
+    #     duration=120,
+    #     user_id=1
     #     )
 
-    # D11 = Custom_destination(
-    #     name='', 
-    #     city_id=2,
-    #     description="",
-    #     image_url="",
-    #     address="",
-    #     duration=""
-    #     )
-    # D12 = Custom_destination(
-    #     name='', 
-    #     city_id=2,
-    #     description="",
-    #     image_url="",
-    #     address="",
-    #     duration=""
-    #     )
-    # D13 = Custom_destination(
-    #     name='', 
-    #     city_id=2,
-    #     description="",
-    #     image_url="",
-    #     address="",
-    #     duration=""
-    #     )
-    # D14 = Custom_destination(
-    #     name='', 
-    #     city_id=2,
-    #     description="",
-    #     image_url="",
-    #     address="",
-    #     duration=""
-    #     )
-    # D15 = Custom_destination(
-    #     name='', 
-    #     city_id=2,
-    #     description="",
-    #     image_url="",
-    #     address="",
-    #     duration=""
-    #     )
-    # D16 = Custom_destination(
-    #     name='', 
-    #     city_id=2,
-    #     description="",
-    #     image_url="",
-    #     address="",
-    #     duration=""
-    #     )
-    # D17 = Custom_destination(
-    #     name='', 
-    #     city_id=2,
-    #     description="",
-    #     image_url="",
-    #     address="",
-    #     duration=""
-    #     )
-    # D18 = Custom_destination(
-    #     name='', 
-    #     city_id=2,
-    #     description="",
-    #     image_url="",
-    #     address="",
-    #     duration=""
-    #     )
-    # D19 = Custom_destination(
-    #     name='', 
-    #     city_id=2,
-    #     description="",
-    #     image_url="",
-    #     address="",
-    #     duration=""
-    #     )
-    # D20 = Custom_destination(
-    #     name='', 
-    #     city_id=2,
-    #     description="",
-    #     image_url="",
-    #     address="",
-    #     duration=""
-    #     )
-    # D21 = Custom_destination(
-    #     name='', 
-    #     city_id=3,
-    #     description="",
-    #     image_url="",
-    #     address="",
-    #     duration=""
-    #     )
-    # D22 = Custom_destination(
-    #     name='', 
-    #     city_id=3,
-    #     description="",
-    #     image_url="",
-    #     address="",
-    #     duration=""
-    #     )
-    # D23 = Custom_destination(
-    #     name='', 
-    #     city_id=3,
-    #     description="",
-    #     image_url="",
-    #     address="",
-    #     duration=""
-    #     )
-    # D24 = Custom_destination(
-    #     name='', 
-    #     city_id=3,
-    #     description="",
-    #     image_url="",
-    #     address="",
-    #     duration=""
-    #     )
-    # D25 = Custom_destination(
-    #     name='', 
-    #     city_id=3,
-    #     description="",
-    #     image_url="",
-    #     address="",
-    #     duration=""
-    #     )
-    # D26 = Custom_destination(
-    #     name='', 
-    #     city_id=3,
-    #     description="",
-    #     image_url="",
-    #     address="",
-    #     duration=""
-    #     )
-    # D27 = Custom_destination(
-    #     name='', 
-    #     city_id=3,
-    #     description="",
-    #     image_url="",
-    #     address="",
-    #     duration=""
-    #     )
-    # D28 = Custom_destination(
-    #     name='', 
-    #     city_id=3,
-    #     description="",
-    #     image_url="",
-    #     address="",
-    #     duration=""
-    #     )
-    # D29 = Custom_destination(
-    #     name='', 
-    #     city_id=3,
-    #     description="",
-    #     image_url="",
-    #     address="",
-    #     duration=""
-    #     )
-    # D30 = Custom_destination(
-    #     name='', 
-    #     city_id=3,
-    #     description="",
-    #     image_url="",
-    #     address="",
-    #     duration=""
-    #     )
 
 
 
@@ -295,6 +101,8 @@ def seed_custom_destinations():
     db.session.add(D4)
     db.session.add(D5)
     db.session.add(D6)
+    db.session.add(D7)
+    # db.session.add(D8)
 
 
 

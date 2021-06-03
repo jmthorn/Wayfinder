@@ -7,11 +7,15 @@ def seed_countries():
     C2 = Country(name='Japan')
     C3 = Country(name='Indonesia')
     C4 = Country(name='United Kingdom')
+    C5 = Country(name='South Africa')
+    # C6 = Country(name='')
 
     db.session.add(C1)
     db.session.add(C2)
     db.session.add(C3)
     db.session.add(C4)
+    db.session.add(C5)
+    # db.session.add(C6)
 
     db.session.commit()
 
