@@ -21,7 +21,7 @@ const Footer = () => {
                 <img src={LinkedIn} alt="logo"/>
             </a>
         </div>
-        <h2>Built By: Jessica Thornton</h2>
+        <h2>BUILT BY: JESSICA THORNTON</h2>
         <div className="footer-description">
             <p> This itinerary builder was built as a week-long project for a rigorous 1000+ hour software engineering bootcamp. Images and content sourced from Conde Nast Travel.</p>
         </div>

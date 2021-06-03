@@ -12,7 +12,7 @@
   margin: auto;
 }
 
-.footer-container .footer-description {
+#footer-container .footer-description {
   font-size: 16px;
 }
 
@@ -20,12 +20,13 @@
   margin: auto;
   padding: 2px;
   text-align: center;
-  width: 52%;
+  width: 50%;
 }
 
-.footer-container h2 {
-  font-size: 20px;
+#footer-container h2 {
+  font-size: 25px;
   text-align: center;
+  font-family: "Arsenal", sans-serif;
 }
 
 .footer-icons {
