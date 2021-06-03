@@ -9,7 +9,7 @@
 }
 
 #signup-container form {
-  border: 4px solid black;
+  border: 3px solid black;
   width: 40%;
   max-width: 500px;
   height: auto;
@@ -34,6 +34,7 @@
 #signup-form input {
   flex: 3 0 0;
   margin: 0.5em 0em 0em;
+  background-color: transparent;
   border: 3px solid black;
 }
 
@@ -49,6 +50,7 @@
   border: 3px solid black;
   background-color: white;
   padding: 0.5em 1em;
+  background-color: rgba(255, 255, 255, 0);
 }
 
 .auth-button:active {
