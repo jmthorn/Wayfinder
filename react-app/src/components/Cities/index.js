@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import {getCities} from '../../store/cities'
+import CreateTripModal from '../CreateTripModal';
 import './cities.css'
 
 const Cities = () => {
@@ -13,9 +14,6 @@ const Cities = () => {
       dispatch(getCities())
   }, [dispatch])
 
-  const handleClick = (e) => { 
-      console.log(e)
-  }
 
   return (
     <div id="cities-page-container">
@@ -37,8 +35,8 @@ const Cities = () => {
                             <div >{city.name}</div>
                             <div className="city-line"></div>
                         </div>
-                        <button value={city.id} type="button" className="add-button" onClick={(e) => handleClick(e.target.value)}>+</button>
-                    </div>
+                        {/* <button value={city.id} type="button" className="add-button" onClick={(e) => handleClick(e.target.value)}>+</button> */}
+                        <CreateTripModal cityId={city.id}/>                    </div>
                 </div>
             ))}
         </div>
