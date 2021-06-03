@@ -23,7 +23,7 @@ const Footer = () => {
         </div>
         <h2>Built By: Jessica Thornton</h2>
         <div className="footer-description">
-            <p> This itinerary builder was built as a week-long project for a rigorous 1000+ hour software engineering bootcamp. Thank you to Conde Nast Travel for images and content.</p>
+            <p> This itinerary builder was built as a week-long project for a rigorous 1000+ hour software engineering bootcamp. Images and content sourced from Conde Nast Travel.</p>
         </div>
     </div>
   );
