@@ -14,6 +14,7 @@ const addTrip = (trip) => ({
 
 //   get all trips
   export const getTrips = () => async (dispatch)  => {
+      console.log("HELLO!!")
     const response = await fetch('/api/trips/')
 
     const data = await response.json();
@@ -26,7 +27,6 @@ const addTrip = (trip) => ({
 
 //   create Trip
   export const createTrip = (chosenCityId, startDate, endDate) => async (dispatch)  => {
-      console.log("HELLOOOO", chosenCityId, startDate, endDate)
     const response = await fetch(`/api/trips/`, {
         method: 'POST',
         headers: {
@@ -42,7 +42,6 @@ const addTrip = (trip) => ({
     if (data.errors) {
         return data;
     }
-    console.log("DATAAAAA",data)
     dispatch(addTrip(data))
     return {};
   }
@@ -55,8 +54,8 @@ export default function reducer(state=initialState, action) {
     switch (action.type) {
         case SET_TRIPS:
             newState = {...state}
-            for (const trip in action.payload) { 
-                newState[trip.id] = trip
+            for (let i=0; i < (action.payload.trips).length; i++) { 
+                newState[action.payload.trips[i].id] = action.payload.trips[i]
             }
             return newState
         case ADD_TRIP : 

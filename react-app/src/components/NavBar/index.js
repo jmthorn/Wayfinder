@@ -17,7 +17,7 @@ const NavBar = () => {
         <>
           <span className="nav-options">
             <li id="nav-trips">
-              <NavLink to="/trips" exact={true}>
+              <NavLink to="/mytrips" exact={true}>
                 MY TRIPS
               </NavLink>
             </li>

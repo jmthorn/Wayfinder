@@ -17,7 +17,10 @@ trips_routes = Blueprint('trips', __name__)
 @login_required
 def trips():
     userId = current_user.id
-    trips = Trip.query.filter(Trip.user_id == userId)
+    trips = Trip.query.filter(Trip.user_id == userId).all()
+    print("trips----------------------------------", trips)
+
+
     return {"trips": [trip.to_dict() for trip in trips]}
 
 
