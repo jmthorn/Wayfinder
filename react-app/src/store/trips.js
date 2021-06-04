@@ -1,6 +1,8 @@
 // constants
 const SET_TRIPS = "trips/SET_TRIPS";
 const ADD_TRIP = "trips/ADD_TRIP";
+const UPDATE_TRIP = "trips/UPDATE_TRIP";
+const DELETE_TRIP = "trips/DELETE_TRIP";
 
 const setTrips = (trips) => ({
     type: SET_TRIPS,
@@ -9,6 +11,16 @@ const setTrips = (trips) => ({
 
 const addTrip = (trip) => ({
     type: ADD_TRIP,
+    payload: trip
+});
+
+const update = (trip) => ({
+    type: ADD_TRIP,
+    payload: trip
+});
+
+const remove = (trip) => ({
+    type: DELETE_TRIP,
     payload: trip
 });
 
@@ -49,7 +61,7 @@ const addTrip = (trip) => ({
 //   update Trip
   export const updateTrip = (chosenTripId, startDate, endDate) => async (dispatch)  => {
     const response = await fetch(`/api/trips/${chosenTripId}`, {
-        method: 'POST',
+        method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
         },
@@ -63,7 +75,26 @@ const addTrip = (trip) => ({
     if (data.errors) {
         return data;
     }
-    dispatch(addTrip(data))
+    dispatch(update(data))
+    return {};
+  }
+
+//   delete Trip
+  export const deleteTrip = (chosenTripId) => async (dispatch)  => {
+    const response = await fetch(`/api/trips/${chosenTripId}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            chosenTripId,
+        }),
+    });
+    const data = await response.json();
+    if (data.errors) {
+        return data;
+    }
+    dispatch(remove(data))
     return {};
   }
 
@@ -82,6 +113,14 @@ export default function reducer(state=initialState, action) {
         case ADD_TRIP : 
             newState = {...state}
             newState[action.payload.trip.id] = action.payload.trip
+            return newState
+        case UPDATE_TRIP : 
+            newState = {...state}
+            newState[action.payload.trip.id] = action.payload.trip
+            return newState
+        case DELETE_TRIP : 
+            newState = {...state}
+            delete newState[action.payload.trip.id]
             return newState
         default:
             return state;

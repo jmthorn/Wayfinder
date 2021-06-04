@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {updateTrip} from '../../store/trips'
+import {updateTrip, deleteTrip} from '../../store/trips'
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
@@ -19,14 +19,20 @@ function UpdateTripForm({tripId}) {
   const chosenTrip = tripsarr.filter((trip) => trip?.id === tripId)[0]
   const chosenTripId = chosenTrip.id
   const dispatch = useDispatch();
-  const [error, setError] = useState("");
+  const [errors, setErrors] = useState([]);
 
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    let new_errors = []
     if(endDate < startDate) { 
-      setError("Your end date is before your start date!")
-    } else {
+      new_errors.push("Your end date is before your start date!")
+    } else if (!endDate || !startDate) { 
+      new_errors.push("You're missing a date!")
+    }
+    setErrors(new_errors)
+    console.log(errors)
+    if (!errors) {
       setUpdate("UPDATED!")
       return dispatch(updateTrip(chosenTripId, startDate, endDate))
     }
@@ -35,8 +41,8 @@ function UpdateTripForm({tripId}) {
 
   const cancelTrip = (e) => {
     e.preventDefault();
-    setUpdate("CANCELED!")
-    return dispatch(cancelTrip(chosenTripId))
+    setCancel("CANCELED!")
+    return dispatch(deleteTrip(chosenTripId))
     
   };  
 
@@ -46,10 +52,11 @@ function UpdateTripForm({tripId}) {
       <h2 className="modal-title">Update your Trip</h2>
       <div className="modal-line"></div>
       <div className="modal-form">
-          <form onSubmit={(e) => handleSubmit(e)}>
+          <form >
               <label>When are you going to {chosenTrip.name}?
-                {error && (
-                  <div className="modal-error">{error}</div>
+                {errors && errors?.map((error) => (
+                    <div className="modal-error">{error}</div>
+                  )
                 )}
                 <div className="modal-date-inputs">
                     <DatePicker selected={startDate} placeholderText="Start Date" onChange={(date) => setStartDate(date)} />
@@ -57,8 +64,8 @@ function UpdateTripForm({tripId}) {
                     <DatePicker selected={endDate} placeholderText="End Date" onChange={(date) => setEndDate(date)} />
                 </div>
               </label>
-              <button className="modal-button" type="submit">{update}</button>
-              <button  className="modal-button modal-button-cancel" onClick={() => cancelTrip}>{cancel}</button>
+              <button className="modal-button" type="submit" onClick={(e) => handleSubmit(e)}>{update}</button>
+              <button  className="modal-button modal-button-cancel" onClick={(e) => cancelTrip(e)}>{cancel}</button>
           </form>
       </div>
     </>

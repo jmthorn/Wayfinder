@@ -14,7 +14,7 @@ class Trip(db.Model):
 
   users = relationship("User", back_populates="trips")
   cities = relationship("City", back_populates="trips")
-  events = relationship("Event", back_populates="trips")
+  events = relationship("Event", cascade="all, delete", back_populates="trips")
 
   def to_dict(self):
     return {
@@ -25,6 +25,14 @@ class Trip(db.Model):
       "end_date": self.end_date,
       "image_url": self.cities.image_url,
       "name": self.cities.name
+    }
+  def to_dict_wo_cities(self):
+    return {
+      "id": self.id,
+      "user_id": self.user_id,
+      "city_id": self.city_id,
+      "start_date": self.start_date,
+      "end_date": self.end_date
     }
 
 
