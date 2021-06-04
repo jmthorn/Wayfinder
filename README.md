@@ -1,98 +1,67 @@
-# Flask React Project
+# Welcome to ArchiBnb
 
-This is the backend for the Flask React project.
+In this itinerary builder, a user can look up destinations by city and add them to their trip. After adding destinations, an itinerary will be produced, displaying an optimized time schedule of events.
 
-## Getting started
+A live Link to the website can be found here: https://wayfinder-app.herokuapp.com/
 
-1. Clone this repository (only this branch)
+## A walkthrough of the website
 
-   ```bash
-   git clone https://github.com/appacademy-starters/python-project-starter.git
-   ```
+<!-- ![](https://archibnb-images.s3.us-east-2.amazonaws.com/1-20.gif) -->
 
-2. Install dependencies
+<!-- ![](https://archibnb-images.s3.us-east-2.amazonaws.com/2-20.gif) -->
 
-      ```bash
-      pipenv install --dev -r dev-requirements.txt && pipenv install -r requirements.txt
-      ```
+<!-- ![](https://archibnb-images.s3.us-east-2.amazonaws.com/3-20.gif) -->
 
-3. Create a **.env** file based on the example with proper settings for your
-   development environment
-4. Setup your PostgreSQL user, password and database and make sure it matches your **.env** file
+### Technologies
 
-5. Get into your pipenv, migrate your database, seed your database, and run your flask app
+#### Front End
 
-   ```bash
-   pipenv shell
-   ```
+- JavaScript
+- HTML
+- CSS
+- React
+- Redux
+- Hosted on Heroku
 
-   ```bash
-   flask db upgrade
-   ```
+#### Back End
 
-   ```bash
-   flask seed all
-   ```
+- PostgreSQL
+- Express.js
+- SQLAlchemy
+- Flask
 
-   ```bash
-   flask run
-   ```
+## Functionalities
 
-6. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory.
+- User authentication is completed by hashing passwords using bcrypt js library (csurf protected as well)
+- The user can search for properties around the world by entering the location, booking dates and guest count.
+- Once logged in, a user can navigate through "Places" and book a trip with start and end dates.
+- The user can then navigate to destinations within that "Place" to add to their booked trip.
+- A logged in user can add custom destinations if their desired destination is not available.
+- Onced booked, the user can update or cancel their trip in "MyTrips".
+- On the "MyTrips" page, the user can also navigate to the itinerary for each trip, which will display an optimized trip schedule.
 
-***
-*IMPORTANT!*
-   If you add any python dependencies to your pipfiles, you'll need to regenerate your requirements.txt before deployment.
-   You can do this by running:
+## Backend itinerary routes code snippets:
 
-   ```bash
-   pipenv lock -r > requirements.txt
-   ```
+```
 
-*ALSO IMPORTANT!*
-   psycopg2-binary MUST remain a dev dependency because you can't install it on apline-linux.
-   There is a layer in the Dockerfile that will install psycopg2 (not binary) for us.
-***
 
-## Deploy to Heroku
+```
 
-1. Create a new project on Heroku
-2. Under Resources click "Find more add-ons" and add the add on called "Heroku Postgres"
-3. Install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-command-line)
-4. Run
+## Frontend itinerary routes code snippets:
 
-   ```bash
-   heroku login
-   ```
+```
 
-5. Login to the heroku container registry
 
-   ```bash
-   heroku container:login
-   ```
+```
 
-6. Update the `REACT_APP_BASE_URL` variable in the Dockerfile.
-   This should be the full URL of your Heroku app: i.e. "https://flask-react-aa.herokuapp.com"
-7. Push your docker container to heroku from the root directory of your project.
-   This will build the dockerfile and push the image to your heroku container registry
+## Challenges
 
-   ```bash
-   heroku container:push web -a {NAME_OF_HEROKU_APP}
-   ```
+-
 
-8. Release your docker container to heroku
+## Future Implementations
 
-   ```bash
-   heroku container:release web -a {NAME_OF_HEROKU_APP}
-   ```
+-
 
-9. set up your database:
+## The Wayfinder Creator
 
-   ```bash
-   heroku run -a {NAME_OF_HEROKU_APP} flask db upgrade
-   heroku run -a {NAME_OF_HEROKU_APP} flask seed all
-   ```
-
-10. Under Settings find "Config Vars" and add any additional/secret .env variables.
-
-11. profit
+- [@jmthorn](https://github.com/jmthorn) 🐈
