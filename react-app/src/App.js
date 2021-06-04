@@ -12,6 +12,7 @@ import { authenticate } from "./store/session";
 import NavBar from "./components/NavBar";
 import Itinerary from "./components/Itinerary";
 import Footer from "./components/Footer";
+import Trips from "./components/Trips";
 
 
 function App() {
@@ -63,6 +64,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path={`/itinerary/:tripId`} exact={true}>
           <Itinerary />
+        </ProtectedRoute>
+        <ProtectedRoute path={`/mytrips`} exact={true}>
+          <Trips />
         </ProtectedRoute>
       </Switch>
       <Footer />
