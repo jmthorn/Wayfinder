@@ -1,9 +1,10 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
 from app.models import City
 from app.models import Default_destination
 from app.models import Custom_destination
 from sqlalchemy import and_
+from app.models import db
 
 
 destinations_routes = Blueprint('destinations', __name__)
@@ -42,7 +43,7 @@ def destination(destinationName):
 def add_destination():
     userId = current_user.id
     json_data = request.get_json()
-
+    print(json_data)
     new_destination = Custom_destination(
         user_id= userId,
         city_id=json_data['cityId'],
@@ -57,7 +58,11 @@ def add_destination():
 
     db.session.add(new_destination)
     db.session.commit()
-    return {"destination": new_destination.to_dict()}
+    userId = current_user.id
+    default_destinations = Default_destination.query.filter(Default_destination.city_id == json_data['cityId']).all()
+    custom_destinations = Custom_destination.query.filter(and_(Custom_destination.city_id == json_data['cityId'], Custom_destination.user_id == userId)).all()
+
+    return {"default_destinations": [destination.to_dict() for destination in default_destinations], "custom_destinations": [destination.to_dict() for destination in custom_destinations]}
 
 #update destination
 @destinations_routes.route('/<destinationId>', methods=['PUT'])

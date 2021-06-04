@@ -9,6 +9,8 @@ Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_KEY);
 
 function CreateDestinationForm({cityId}) {
 
+  console.log(process.env)
+
   const [created, setCreated] = useState("CREATE TRIP")
   const cities = useSelector(state => state.cities.cities)
   const chosenCity = cities?.cities?.filter((city) => city.id === cityId)[0]
@@ -28,7 +30,7 @@ function CreateDestinationForm({cityId}) {
     e.preventDefault();
 
     
-    if(!image_url || !address || !name || !lat ||!lng ||!duration || !description) { 
+    if(!image_url || !address || !name || !duration || !description) { 
         setError("Your destination is missing data!")
     } else {
       let res = await Geocode.fromAddress(address)
@@ -36,7 +38,7 @@ function CreateDestinationForm({cityId}) {
       setLat(lat)
       setLng(lng)
       setCreated("CREATED!")
-      return dispatch(createDestination(chosenCityId, image_url, address, name, lat, lng, duration, description))
+      return dispatch(createDestination(cityId, image_url, address, name, lat, lng, duration, description))
     }
   };  
 
