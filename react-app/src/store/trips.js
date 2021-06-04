@@ -98,7 +98,7 @@ const remove = (trip) => ({
     return {};
   }
 
-const initialState = { trips: null};
+const initialState = {};
 
 
 export default function reducer(state=initialState, action) {
