@@ -5,6 +5,7 @@ COPY react-app/. .
 
 # You have to set this because it should be set during build time.
 ENV REACT_APP_BASE_URL=https://wayfinder-app.herokuapp.com
+ENV REACT_APP_GOOGLE_MAPS_KEY=${{secrets.REACT_APP_GOOGLE_MAPS_KEY}}
 
 # Build our React App
 RUN npm install
