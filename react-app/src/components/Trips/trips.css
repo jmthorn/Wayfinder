@@ -51,7 +51,28 @@
   display: flex;
   align-content: center;
   justify-content: center;
+  align-items: center;
   margin-top: 0em;
+  font-size: 26px;
+}
+
+.trip-image-info {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.trip-start-end {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+.itinerary-button {
+  margin-top: 3em;
+  border: 2.5px solid black;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 1em;
 }
 
 .trip-container img {

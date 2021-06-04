@@ -68,7 +68,7 @@
 }
 
 .modal-to {
-  margin-top: 2em;
+  margin-top: 1.5em;
   padding: 0.5em 1em;
 }
 
@@ -102,4 +102,8 @@
   color: rgb(109, 7, 7);
   font-weight: 500;
   font-size: 18px;
+}
+
+.modal-button-cancel {
+  margin-top: 2em;
 }

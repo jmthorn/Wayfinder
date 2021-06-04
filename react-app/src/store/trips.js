@@ -46,6 +46,27 @@ const addTrip = (trip) => ({
     return {};
   }
 
+//   update Trip
+  export const updateTrip = (chosenTripId, startDate, endDate) => async (dispatch)  => {
+    const response = await fetch(`/api/trips/${chosenTripId}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            chosenTripId,
+            startDate,
+            endDate
+        }),
+    });
+    const data = await response.json();
+    if (data.errors) {
+        return data;
+    }
+    dispatch(addTrip(data))
+    return {};
+  }
+
 const initialState = { trips: null};
 
 

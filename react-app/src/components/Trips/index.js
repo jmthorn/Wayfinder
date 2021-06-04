@@ -9,7 +9,7 @@ import './trips.css'
 const Trips = () => {
 
   const dispatch = useDispatch()
-  const trips = useSelector(state => state.trips)
+  const trips = useSelector(state => state?.trips)
 
   
   const tripsarr = Object.values(trips)
@@ -18,6 +18,11 @@ const Trips = () => {
       dispatch(getTrips())
   }, [dispatch])
 
+
+  const roundDate = (date) => { 
+      let newDate = date?.split(' ').slice(1,3).reverse().join(' ')
+      return newDate
+  }
 
   return (
     <div id="trips-page-container">
@@ -31,7 +36,10 @@ const Trips = () => {
                 <div key={trip?.id} className="trip-container">
                     <Link to={`/mytrips/${trip?.id}`}>
                         <div className="trip-image-container">
-                            <div>{trip?.start_date} - {trip?.end_date}</div>
+                            <div className="trip-image-info">
+                                <div className="trip-start-end">{roundDate(trip?.start_date)} - {roundDate(trip?.end_date)}</div>
+                                <button className="itinerary-button">ITINERARY</button>
+                            </div>
                             <img src={trip?.image_url} alt="trip_image"></img>
                         </div>
                     </Link>
