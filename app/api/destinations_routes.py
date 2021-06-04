@@ -92,4 +92,4 @@ def delete_destination(destinationId):
 
     db.session.delete(destination_to_delete)
     db.session.commit()
-    return {"trip": destination_to_delete.to_dict()}
+    return {"destination": destination_to_delete.to_dict()}
