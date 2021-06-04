@@ -22,7 +22,9 @@ class Trip(db.Model):
       "user_id": self.user_id,
       "city_id": self.city_id,
       "start_date": self.start_date,
-      "end_date": self.end_date
+      "end_date": self.end_date,
+      "image_url": self.cities.image_url,
+      "name": self.cities.name
     }
 
 
