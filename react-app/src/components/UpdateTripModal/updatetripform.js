@@ -31,8 +31,7 @@ function UpdateTripForm({tripId}) {
       new_errors.push("You're missing a date!")
     }
     setErrors(new_errors)
-    console.log(errors)
-    if (!errors) {
+    if (errors.length == 0) {
       setUpdate("UPDATED!")
       return dispatch(updateTrip(chosenTripId, startDate, endDate))
     }
