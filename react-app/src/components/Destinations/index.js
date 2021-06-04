@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams, Route, NavLink } from 'react-router-dom';
 import {getDestinations} from '../../store/destinations'
 import Destination_Detail from '../Destination_Detail'
+import CreateDestinationModal from '../CreateDestinationModal'
 import './destinations.css'
 
 const Destinations = () => {
@@ -18,8 +19,6 @@ const Destinations = () => {
       dispatch(getDestinations(cityId))
   }, [dispatch])
 
-//   let default_destinations_div = []
-//   let custom_destinations_div = []
 
   return (
     <div id="destinations-page-container">
@@ -39,7 +38,8 @@ const Destinations = () => {
             ))}
             <div id="add-dest">
                 <div>Add Destination</div>
-                <button>+</button>
+                <CreateDestinationModal cityId={cityId}/>
+                {/* <button  id="add-dest-button">+</button> */}
             </div>
         </nav>
         <Route path="/destinations/:cityId/:destinationName">

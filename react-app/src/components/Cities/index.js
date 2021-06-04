@@ -36,7 +36,8 @@ const Cities = () => {
                             <div className="city-line"></div>
                         </div>
                         {/* <button value={city.id} type="button" className="add-button" onClick={(e) => handleClick(e.target.value)}>+</button> */}
-                        <CreateTripModal cityId={city.id}/>                    </div>
+                        <CreateTripModal cityId={city.id}/>                    
+                    </div>
                 </div>
             ))}
         </div>
