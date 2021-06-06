@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {updateDestination} from '../../store/destinations';
+import {getDestination, updateDestination} from '../../store/destinations';
 import { getTrips } from '../../store/trips';
 import Geocode from "react-geocode";
 import { useHistory } from 'react-router';
+import { Link, useParams, Route } from 'react-router-dom';
 
 
 
-function UpdateDestinationsForm({destination}) {
 
+function UpdateDestinationsForm() {  //{destination}
+    
+  const destination = useSelector(state => state?.destinations?.destination?.destination)
   const [name, setName] = useState(destination.name);
   const [address, setAddress] = useState(destination.address);
   const [image_url, setImageURL] = useState(destination.image_url);
@@ -26,6 +29,9 @@ function UpdateDestinationsForm({destination}) {
   const city_id =  destination.city_id;     
   const destinationId = destination.id;
   const history = useHistory()
+  const { cityId, destinationName } = useParams()
+
+
 
   useEffect(() => {
   (async()=> {
@@ -37,8 +43,9 @@ function UpdateDestinationsForm({destination}) {
 
 
   useEffect(() => { 
+      dispatch(getDestination(destinationName))
       dispatch(getTrips())
-  }, [])
+  }, [destinationName])
 
   const handleSubmit = async(e) => {
     e.preventDefault();
