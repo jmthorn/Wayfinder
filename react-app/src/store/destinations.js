@@ -114,6 +114,7 @@ const remove = (destination) => ({
 
 //   delete Destination
   export const deleteDestination= (destinationId) => async (dispatch)  => {
+      console.log(destinationId)
     const response = await fetch(`/api/destinations/${destinationId}`, {
         method: 'DELETE',
         headers: {
@@ -121,6 +122,7 @@ const remove = (destination) => ({
         },
         body: JSON.stringify({
             destinationId,
+        
         }),
     });
     const data = await response.json();

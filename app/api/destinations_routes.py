@@ -92,9 +92,13 @@ def update_destination(destinationId):
 def delete_destination(destinationId):
     userId = current_user.id
     json_data = request.get_json()
-
+    print("JSONNNNNNN",json_data)
     destination_to_delete = Custom_destination.query.get(json_data['destinationId'])
 
     db.session.delete(destination_to_delete)
     db.session.commit()
-    return {"destination": destination_to_delete.to_dict()}
+    userId = current_user.id
+    default_destinations = Default_destination.query.filter(Default_destination.city_id == destination_to_delete.city_id).all()
+    custom_destinations = Custom_destination.query.filter(and_(Custom_destination.city_id == destination_to_delete.city_id, Custom_destination.user_id == userId)).all()
+
+    return {"default_destinations": [destination.to_dict() for destination in default_destinations], "custom_destinations": [destination.to_dict() for destination in custom_destinations]}
