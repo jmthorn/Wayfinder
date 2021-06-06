@@ -10,16 +10,12 @@ const Destinations = () => {
   const dispatch = useDispatch()
   const cities = useSelector(state => state.cities.cities)
   const destination = useSelector(state => state?.destinations?.destination)
-  // const destinations = useSelector(state => state?.destinations?.destinations)
   const { cityId, destinationName } = useParams()
   const destination_name = destinationName.split("_").join(" ")
 
-  console.log("DESTINATINON",destination?.destination)
-  // console.log("DESTINATIONSSSSS",destinations?.destination)
 
   useEffect(() => { 
       dispatch(getDestination(destinationName))
-      // dispatch(getDestinations(cityId))
 
   }, [dispatch, cityId, destinationName])
 
