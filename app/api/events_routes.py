@@ -33,40 +33,40 @@ def add_event():
     json_data = request.get_json()
 
     new_event = Event(
-        trip_id= json_data['tripId'],
+        trip_id= json_data['trip_id'],
         order = null,
         default_destination_id=json_data['default_destination_id'],
         custom_destination_id=json_data['custom_destination_id'],
-        start=json_data['startDate'],
-        end=json_data['endDate'],
+        start=null,
+        end=null,
     )
 
     db.session.add(new_event)
     db.session.commit()
     return {"event": new_event.to_dict()}
 
-@events_routes.route('/<eventId>', methods=['PUT'])
+@events_routes.route('/<event_id>', methods=['PUT'])
 @login_required
-def update_event(eventId):
+def update_event(event_id):
     userId = current_user.id
     json_data = request.get_json()
-    event_to_update = Event.query.get(json_data['chosenEventId'])
+    event_to_update = Event.query.get(json_data['event_id'])
 
     event_to_update.order=json_data['order']
-    event_to_update.start=json_data['startDate']
-    event_to_update.end=json_data['endDate']
+    event_to_update.start=json_data['start']
+    event_to_update.end=json_data['end']
 
     db.session.add(event_to_update)
     db.session.commit()
     return {"event": event_to_update.to_dict()}
 
-@events_routes.route('/<chosenEventId>', methods=['DELETE'])
+@events_routes.route('/<event_id>', methods=['DELETE'])
 @login_required
-def delete_trip(chosenEventId):
+def event(event_id):
     userId = current_user.id
     json_data = request.get_json()
 
-    event_to_delete = Event.query.get(json_data['chosenEventId'])
+    event_to_delete = Event.query.get(json_data['event_id'])
 
     db.session.delete(event_to_delete)
     db.session.commit()

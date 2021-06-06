@@ -1,4 +1,3 @@
-// frontend/src/components/LoginFormModal/index.js
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {createTrip} from '../../store/trips'

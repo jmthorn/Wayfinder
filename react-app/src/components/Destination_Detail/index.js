@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams, Route } from 'react-router-dom';
 import {getDestination, getDestinations} from '../../store/destinations'
+import CreateEventModal from '../CreateEventModal';
 import UpdateDestinationsModal from '../UpdateDestinationsModal'
 import './destination_detail.css'
 
@@ -27,7 +28,7 @@ const Destinations = () => {
         <div id="destination-info">
           <div id="dest-header-container">
             <div id="dest-name">{destination?.destination?.name}</div>
-            <button id="dest-button">ADD TO TRIP</button>
+            <CreateEventModal cityId={cityId}/>
           </div>
           <div id="dest-line"></div>
           <div id="dest-address">{destination?.destination?.address}</div>
@@ -35,7 +36,6 @@ const Destinations = () => {
           <div id="dest-dur">Duration: {Math.round(((destination?.destination?.duration)/60)*100)/100} Hrs.</div>
           {destination?.destination?.user_id && (
             <UpdateDestinationsModal destination={destination?.destination}/>
-            // <button id="dest-edit-button">EDIT DESTINATION</button>
           )}
         </div>
     </div>
