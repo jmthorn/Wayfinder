@@ -24,6 +24,15 @@ const Trips = () => {
       return newDate
   }
 
+
+  const noTrips = () => { 
+    if(tripsarr.length === 0 )  
+    return (
+        <div className="no-trips-message">You have no trips! Book your first trip to view it's itinerary.</div>
+    )
+  }
+
+
   return (
     <div id="trips-page-container">
         <h1>YOUR TRIPS</h1>
@@ -32,6 +41,7 @@ const Trips = () => {
         <h3>All Trips</h3>
         <div className="trips-line"></div>
         <div id="trips-container">
+            {noTrips()}
             {tripsarr?.map((trip) => ( 
                 <div key={trip?.id} className="trip-container">
                     <Link to={`/mytrips/${trip?.id}`}>

@@ -34,7 +34,26 @@
 }
 
 #dest-dur {
-  margin: 2em 0em;
+  margin: 2em 0em 1em;
   font-weight: 600;
   font-size: 20px;
+}
+
+#dest-header-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#dest-button,
+#dest-edit-button {
+  border: 2.5px solid black;
+  padding: 1em;
+  margin: 2em 4em 2em 0em;
+  background-color: white;
+}
+
+#dest-button:active,
+#dest-edit-button:active {
+  background-color: black;
+  color: white;
 }

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams, Route, NavLink } from 'react-router-dom';
-import {getDestinations} from '../../store/destinations'
+import {deleteDestination, getDestinations} from '../../store/destinations'
 import Destination_Detail from '../Destination_Detail'
 import CreateDestinationModal from '../CreateDestinationModal'
 import './destinations.css'
@@ -13,12 +13,15 @@ const Destinations = () => {
   const destinations = useSelector(state => state.destinations.destinations)
   const { cityId } = useParams()
 
-  console.log(destinations)
 
   useEffect(() => { 
       dispatch(getDestinations(cityId))
   }, [dispatch])
 
+
+  const removeDestination = (destinationId) => { 
+    dispatch(deleteDestination(destinationId))
+  }
 
   return (
     <div id="destinations-page-container">
@@ -31,7 +34,10 @@ const Destinations = () => {
             ))}
             {destinations?.custom_destinations?.map((destination) =>  (
                 <NavLink key={destination.name} to={`/destinations/${cityId}/${destination.name.split(" ").join("_")}`}>
-                    <div className="destination">{destination.name}</div>
+                    <div className="custom-destination-info-container">
+                        <div className="destination">{destination.name}</div>
+                        <button value={destination.id} onClick={(e) => removeDestination(e.target.value)} className="delete-destination">-</button> 
+                    </div>
                     <div className="dest-nav-line"></div>
 
                 </NavLink>
