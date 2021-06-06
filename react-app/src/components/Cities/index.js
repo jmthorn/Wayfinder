@@ -27,6 +27,9 @@ const Cities = () => {
                 <div key={city.id} className="city-container">
                     <Link to={`/destinations/${city.id}`}>
                         <div className="city-image-container">
+                            <div className="city-image-info">
+                                <button className="destinations-button">DESTINATIONS</button>
+                            </div>
                             <img src={city.image_url} alt="city_image"></img>
                         </div>
                     </Link>
