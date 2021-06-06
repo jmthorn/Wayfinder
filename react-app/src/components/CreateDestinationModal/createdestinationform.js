@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {createDestination} from '../../store/destinations'
 import Geocode from "react-geocode";
-Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_KEY);
+
 
 
 
 
 function CreateDestinationForm({cityId}) {
 
-  console.log(process.env)
 
   const [created, setCreated] = useState("CREATE TRIP")
   const cities = useSelector(state => state.cities.cities)
@@ -24,15 +23,25 @@ function CreateDestinationForm({cityId}) {
   const [lng, setLng] = useState("");
   const [duration, setDuration] = useState("");
   const [description, setDescription] = useState("");
+  const [apiKey, setApiKey] = useState('');
+
+  useEffect(() => {
+  (async()=> {
+    const res = await fetch('/api/retrieve_api/');
+    const { apiKey } = await res.json();
+    setApiKey(apiKey);
+    })()
+  })
 
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-
     
     if(!image_url || !address || !name || !duration || !description) { 
         setError("Your destination is missing data!")
     } else {
+      // Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_KEY);
+      apiKey && Geocode.setApiKey(apiKey);
       let res = await Geocode.fromAddress(address)
       const { lat, lng } = res.results[0].geometry.location;
       setLat(lat)

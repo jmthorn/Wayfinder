@@ -12,6 +12,7 @@ from .api.cities_routes import cities_routes
 from .api.destinations_routes import destinations_routes
 from .api.trips_routes import trips_routes
 from .api.events_routes import events_routes
+from .api.api_routes import api_routes
 
 from .seeds import seed_commands
 
@@ -39,6 +40,7 @@ app.register_blueprint(cities_routes, url_prefix='/api/cities')
 app.register_blueprint(destinations_routes, url_prefix='/api/destinations')
 app.register_blueprint(trips_routes, url_prefix='/api/trips')
 app.register_blueprint(events_routes, url_prefix='/api/events')
+app.register_blueprint(api_routes, url_prefix='/api/retrieve_api')
 db.init_app(app)
 Migrate(app, db)
 
