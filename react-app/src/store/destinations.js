@@ -84,21 +84,32 @@ const remove = (destination) => ({
   }
 
 //   update  destination
-  export const updateDestination = (cityId, image_url, address, name, lat, lng, duration, description) => async (dispatch)  => {
-    const response = await fetch(`/api/destinations/`, {
-        method: 'POST',
+  export const updateDestination = (
+          destinationId,
+          city_id,
+          description,
+          image_url,
+          address, 
+          duration, 
+          lat,
+          lng,
+          name) => async (dispatch)  => {
+    console.log(destinationId, city_id, image_url, address, name, lat, lng, duration, description)
+    const response = await fetch(`/api/destinations/${destinationId}>`, {
+        method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            cityId,
-            image_url,
-            address,
-            name,
-            lat,
-            lng,
-            duration,
-            description
+          destinationId,
+          city_id,
+          description,
+          image_url,
+          address, 
+          duration, 
+          lat,
+          lng,
+          name
         }),
     });
 
@@ -146,7 +157,7 @@ export default function reducer(state=initialState, action) {
         case ADD_DESTINATION:
             return {...state, destinations: action.payload}
         case UPDATE_DESTINATION:
-            return {...state, destinations: action.payload}
+            return {...state, destinations: {custom_destinations: [...action.payload.custom_destinations], default_destinations: [...action.payload.default_destinations]}, destination: action.payload.destination}
         case DELETE_DESTINATION:
             return {...state, destinations: action.payload}
         default:
