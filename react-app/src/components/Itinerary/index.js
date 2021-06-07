@@ -7,23 +7,29 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getEvents } from '../../store/events';
 import { useParams } from 'react-router';
 import "react-big-calendar/lib/css/react-big-calendar.css"
+import { getTrips } from '../../store/trips';
 
 
 const Itinerary = () => {
 
   const events = useSelector(state => state.events)
+  const trips = useSelector(state => state?.trips)
+  const { trip_id } = useParams()
+  const chosenTrip = Object.values(trips).filter((trip) => trip.id === Number(trip_id))
   const eventsArr = Object.values(events)
   const localizer = momentLocalizer(moment)
+  // const [calendarEvent, setCalendarEvent] = useState({});
   const DnDCalendar = withDragAndDrop(Calendar);
   const dispatch = useDispatch()
-  const { trip_id } = useParams()
-  const today = new Date();
+  const today = new Date(); //Mon Jun 07 2021 13:03:45 GMT-0500 (Central Daylight Time) 
+  const tripStartDate = new Date(chosenTrip[0]?.start_date) //Tue Jun 22 2021 00:00:00 GMT-0500 (Central Daylight Time)
+  const tripEndDate = new Date(chosenTrip[0]?.end_date) 
 
-  // const [calendarEvent, setCalendarEvent] = useState({});
-  // let today = new Date();
+
 
   useEffect(() => { 
       dispatch(getEvents(trip_id))
+      dispatch(getTrips())
   }, [dispatch])
 
 
@@ -59,7 +65,6 @@ const Itinerary = () => {
   };
 
 
-
   return (
     <>
         <div>
@@ -78,6 +83,7 @@ const Itinerary = () => {
         defaultView="week"
         min={new Date( today.getFullYear(), today.getMonth(), today.getDate(), 8)}
         max={new Date( today.getFullYear(), today.getMonth(), today.getDate(), 17)}
+        date={tripStartDate}
         // onSelectSlot={handleSelect}
         // onSelectEvent={handleSelectEvent}
         />
