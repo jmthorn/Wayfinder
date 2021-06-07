@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams, Route, NavLink } from 'react-router-dom';
+import { Link, useParams, Route, NavLink, useHistory } from 'react-router-dom';
 import {deleteDestination, getDestinations} from '../../store/destinations'
 import Destination_Detail from '../Destination_Detail'
 import CreateDestinationModal from '../CreateDestinationModal'
@@ -11,8 +11,16 @@ const Destinations = () => {
   const dispatch = useDispatch()
   const cities = useSelector(state => state.cities.cities)
   const destinations = useSelector(state => state.destinations.destinations)
-  const { cityId } = useParams()
+  const { cityId, destinationName } = useParams()
+//   const destination_name = destinationName.split("_").join(" ")
+  const history = useHistory()
 
+
+  useEffect(() => { 
+    if (destinations && !destinationName) { 
+        history.push(`/destinations/${cityId}/${destinations.default_destinations[0].name.split("_").join(" ")}`)
+    }
+  }, [dispatch,destinationName, destinations, cityId])
 
   useEffect(() => { 
       dispatch(getDestinations(cityId))
