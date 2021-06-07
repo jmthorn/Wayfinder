@@ -31,7 +31,6 @@ export const getEvents = (trip_id) => async(dispatch) => {
     if(data.errors) { 
         return data;
     }
-    console.log(data)
     dispatch(setEvents(data))
     return {}
 }

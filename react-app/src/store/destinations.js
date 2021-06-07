@@ -94,7 +94,6 @@ const remove = (destination) => ({
           lat,
           lng,
           name) => async (dispatch)  => {
-    console.log(destinationId, city_id, image_url, address, name, lat, lng, duration, description)
     const response = await fetch(`/api/destinations/${destinationId}>`, {
         method: 'PUT',
         headers: {
@@ -125,7 +124,6 @@ const remove = (destination) => ({
 
 //   delete Destination
   export const deleteDestination= (destinationId) => async (dispatch)  => {
-      console.log(destinationId)
     const response = await fetch(`/api/destinations/${destinationId}`, {
         method: 'DELETE',
         headers: {

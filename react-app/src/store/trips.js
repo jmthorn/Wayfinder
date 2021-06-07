@@ -26,7 +26,6 @@ const remove = (trip) => ({
 
 //   get all trips
   export const getTrips = () => async (dispatch)  => {
-      console.log("HELLO!!")
     const response = await fetch('/api/trips/')
 
     const data = await response.json();

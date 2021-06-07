@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams, Route, NavLink } from 'react-router-dom';
-import {deleteDestination, getDestinations} from '../../store/destinations'
+import Itinerary from '../Itinerary'
 import {removeEvent, getEvents} from '../../store/events'
 import './events.css'
 
@@ -38,9 +38,9 @@ const Destinations = () => {
                 // </NavLink>
             ))}
         </nav>
-        <Route path="/events/itinerary/:tripId">
-            {/* <Itinerary /> */}
-        </Route>
+        {/* <Route path="/events/itinerary/:tripId"> */}
+        <Itinerary />
+        {/* </Route> */}
     </div>
   );
 }

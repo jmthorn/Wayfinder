@@ -7,9 +7,6 @@ import './footer.css'
 
 const Footer = () => {
 
-  const handleClick = (e) => { 
-      console.log(e)
-  }
 
   return (
     <div id="footer-container">
