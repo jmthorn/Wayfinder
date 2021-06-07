@@ -13,6 +13,7 @@ import NavBar from "./components/NavBar";
 import Itinerary from "./components/Itinerary";
 import Footer from "./components/Footer";
 import Trips from "./components/Trips";
+import Events from "./components/Events";
 
 
 function App() {
@@ -62,11 +63,14 @@ function App() {
         <ProtectedRoute path={[`/destinations/:cityId`, "/destinations/:cityId/:destinationName"]} exact={true}>
           <Destinations />
         </ProtectedRoute>
-        <ProtectedRoute path={`/itinerary/:tripId`} exact={true}>
+        {/* <ProtectedRoute path={`/itinerary/:tripId`} exact={true}>
           <Itinerary />
-        </ProtectedRoute>
+        </ProtectedRoute> */}
         <ProtectedRoute path={`/mytrips`} exact={true}>
           <Trips />
+        </ProtectedRoute>
+        <ProtectedRoute path={`/events/:trip_id`} exact={true}>
+          <Events />
         </ProtectedRoute>
       </Switch>
       <Footer />

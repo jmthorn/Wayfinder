@@ -14,15 +14,11 @@ from app.models import db
 events_routes = Blueprint('events', __name__)
 
 
-@events_routes.route('/', methods=['GET'])
+@events_routes.route('/<trip_id>', methods=['GET'])
 @login_required
-def events():
+def events(trip_id):
     userId = current_user.id
-    json_data = request.get_json()
-
-    events = Event.query.filter(Event.trip_id == json_data['tripId']).all()
-
-
+    events = Event.query.filter(Event.trip_id == trip_id).all()
     return {"events": [event.to_dict() for event in events]}
 
 
@@ -31,15 +27,16 @@ def events():
 def add_event():
     userId = current_user.id
     json_data = request.get_json()
-
-    new_event = Event(
-        trip_id= json_data['trip_id'],
-        order = null,
-        default_destination_id=json_data['default_destination_id'],
-        custom_destination_id=json_data['custom_destination_id'],
-        start=null,
-        end=null,
-    )
+    if 'custom_destination_id' in json_data.keys():
+        new_event = Event(
+            trip_id= json_data['trip_id'],
+            custom_destination_id=json_data['custom_destination_id'],
+        )
+    else:
+        new_event = Event(
+            trip_id= json_data['trip_id'],
+            default_destination_id=json_data['default_destination_id'],
+        )
 
     db.session.add(new_event)
     db.session.commit()
@@ -66,8 +63,9 @@ def event(event_id):
     userId = current_user.id
     json_data = request.get_json()
 
-    event_to_delete = Event.query.get(json_data['event_id'])
-
+    event_to_delete = Event.query.get(event_id)
     db.session.delete(event_to_delete)
+    # db.session.expire_on_commit = False
     db.session.commit()
-    return {"event": event_to_delete.to_dict()}
+    # {'id': 9, 'trip_id': 17, 'order': None, 'default_destination_id': None, 'custom_destination_id': 27, 'start': None, 'end': None, 'name': "Sir John Soane's Museum", 'duration': 60}
+    return {"event": event_to_delete.to_dict_wo_ll()}

@@ -129,3 +129,13 @@
 .create-trip-btn {
   margin-top: 2em;
 }
+
+.select-trip {
+  border: 2.5px solid black;
+  margin: auto;
+  padding: 1em;
+}
+
+.select-trip:focus {
+  outline: 0;
+}
