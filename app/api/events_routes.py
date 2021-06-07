@@ -31,15 +31,17 @@ def events():
 def add_event():
     userId = current_user.id
     json_data = request.get_json()
-
-    new_event = Event(
-        trip_id= json_data['trip_id'],
-        order = null,
-        default_destination_id=json_data['default_destination_id'],
-        custom_destination_id=json_data['custom_destination_id'],
-        start=null,
-        end=null,
-    )
+    print("JSOOONNNNNNNNN",json_data)
+    if 'custom_destination_id' in json_data.keys():
+        new_event = Event(
+            trip_id= json_data['trip_id'],
+            custom_destination_id=json_data['custom_destination_id'],
+        )
+    else:
+        new_event = Event(
+            trip_id= json_data['trip_id'],
+            default_destination_id=json_data['default_destination_id'],
+        )
 
     db.session.add(new_event)
     db.session.commit()

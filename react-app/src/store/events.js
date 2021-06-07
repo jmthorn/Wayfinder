@@ -36,16 +36,16 @@ export const getEvents = (tripId) => async(dispatch) => {
     return {}
 }
 
-export const createEvent = (trip_id, default_destinations, custom_destinations) => async(dispatch) => { 
-    const response = await fetch(`/api/events`, { 
+export const createEvent = (trip_id, default_destination_id, custom_destination_id) => async(dispatch) => { 
+    const response = await fetch(`/api/events/`, { 
         method: 'POST',
         headers: { 
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
             trip_id, 
-            default_destinations,
-            custom_destinations
+            default_destination_id,
+            custom_destination_id
         })
     })
     const data = await response.json();
