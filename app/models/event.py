@@ -33,3 +33,13 @@ class Event(db.Model):
 
     }
 
+
+  def to_dict_wo_ll(self):
+    return {
+      "id": self.id,
+      "order":self.order,
+      "start": self.start,
+      "end": self.end,
+
+    }
+

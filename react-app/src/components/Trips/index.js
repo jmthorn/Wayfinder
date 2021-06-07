@@ -44,7 +44,7 @@ const Trips = () => {
             {noTrips()}
             {tripsarr?.map((trip) => ( 
                 <div key={trip?.id} className="trip-container">
-                    <Link to={`/mytrips/${trip?.id}`}>
+                    <Link to={`/events/${trip?.id}`}>
                         <div className="trip-image-container">
                             <div className="trip-image-info">
                                 <div className="trip-start-end">{roundDate(trip?.start_date)} - {roundDate(trip?.end_date)}</div>

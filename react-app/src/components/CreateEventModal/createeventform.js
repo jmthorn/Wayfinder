@@ -66,7 +66,7 @@ function CreateEventForm() {
           )
       } else { 
           return (
-              <div>You have no trips!</div>
+              <div>You have no trips to this location!</div>
           )
       }
   }

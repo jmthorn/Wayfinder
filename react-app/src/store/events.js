@@ -23,15 +23,15 @@ const remove = (event) => ({
     payload: event
 })
 
-export const getEvents = (tripId) => async(dispatch) => { 
-    const response = await fetch(`api/events/${tripId}`)
+export const getEvents = (trip_id) => async(dispatch) => { 
+    const response = await fetch(`/api/events/${trip_id}`)
 
     const data = await response.json();
 
     if(data.errors) { 
         return data;
     }
-
+    console.log(data)
     dispatch(setEvents(data))
     return {}
 }
@@ -87,7 +87,7 @@ export const removeEvent = (event_id) => async(dispatch) => {
             event_id
         })
     })
-    const data = response.json()
+    const data = await response.json()
     if(data.errors) { 
         return data
     }
@@ -120,5 +120,7 @@ export default function reducer(state=initialState, action)  {
             newState = {...state}
             delete newState[action.payload.event.id]
             return newState
+        default:
+            return state;
     }
 }

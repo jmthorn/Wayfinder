@@ -4,12 +4,14 @@ import session from "./session"
 import cities from "./cities"
 import destinations from "./destinations"
 import trips from "./trips"
+import events from "./events"
 
 const rootReducer = combineReducers({
     session,
     cities,
     destinations,
-    trips
+    trips,
+    events,
 });
 
 
