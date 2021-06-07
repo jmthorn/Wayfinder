@@ -29,7 +29,9 @@ class Event(db.Model):
       "start": self.start,
       "end": self.end,
       "name": self.custom_destinations.name if self.custom_destinations else self.default_destinations.name,
-      "duration": self.default_destinations.duration if self.default_destinations else self.custom_destinations.duration
+      "duration": self.default_destinations.duration if self.default_destinations else self.custom_destinations.duration,
+      "lat": self.default_destinations.lat if self.default_destinations else self.custom_destinations.lat,
+      "lng": self.default_destinations.lng if self.default_destinations else self.custom_destinations.lng
 
     }
 
