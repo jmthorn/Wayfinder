@@ -56,7 +56,7 @@ def destination(destinationName):
 def add_destination():
     userId = current_user.id
     json_data = request.get_json()
-    print(json_data)
+    # print(json_data)
     new_destination = Custom_destination(
         user_id= userId,
         city_id=json_data['cityId'],
@@ -83,7 +83,7 @@ def add_destination():
 def update_destination(destinationId):  
     userId = current_user.id
     json_data = request.get_json()
-    print(json_data)
+    # print(json_data)
     {'name': "Sir John Soane's Museum, 13 Lincoln's Inn Fields, London WC2A 3BP, United Kingdom", 'description': "Sir John Soane's Museums", 'image_url': "This is, without a doubt, the city’s most atmospheric museum, packed to the rafters with hundreds of interesting and impressive artworks and artifact ... (199 characters truncated) ... he unobservant might miss. It's not the unknown it once was though, so unless you go first thing in the morning you'll probably have to wait in line.", 'address': "https://media.cntraveler.com/photos/5a7b4d29b7a3db05bf40e1d4/1:1/w_1024%2Cc_limit/Sir-John-Soane's__2018_The-Picture-Room---Photo-Gareth-Gardner.jpg", 'lat': 60, 'lng': 51.51703819999999, 'duration': -0.1174699, 'custom_destinations_id': 9}
 
     destination_to_update = Custom_destination.query.get(json_data['destinationId'])

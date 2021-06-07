@@ -35,7 +35,6 @@ function CreateEventForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setBooked("BOOKED!")
-    console.log(trip_id, default_destination_id, custom_destination_id)
     return dispatch(createEvent(trip_id, default_destination_id, custom_destination_id))
     
   };  
