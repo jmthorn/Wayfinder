@@ -102,7 +102,7 @@ useEffect(() => {
 
   return startDate && eventsArr.length && (
     <div id="itinerary-page-container">
-      <div id="itinerary-title">{(tripEndDate.getTime()-tripStartDate.getTime())/(1000*3600*24)} Days in {chosenTrip[0].name}</div>
+      <div id="itinerary-title">{(tripEndDate.getTime()-tripStartDate.getTime())/(1000*3600*24)} DAYS IN {chosenTrip[0].name.toUpperCase()}</div>
       <div>
         <DnDCalendar
         localizer={localizer}
