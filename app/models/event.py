@@ -13,6 +13,7 @@ class Event(db.Model):
   custom_destination_id = db.Column(db.Integer, ForeignKey("custom_destinations.id"),nullable=True)
   start = db.Column(db.DateTime, nullable=True)
   end = db.Column(db.DateTime, nullable=True)
+  distance = db.Column(db.Integer, nullable=True)
 
   default_destinations = relationship("Default_destination", back_populates="events")
   custom_destinations = relationship("Custom_destination", back_populates="events")
@@ -28,6 +29,7 @@ class Event(db.Model):
       "custom_destination_id": self.custom_destination_id,
       "start": self.start,
       "end": self.end,
+      "distance": self.distance,
       "title": self.custom_destinations.name if self.custom_destinations else self.default_destinations.name,
       "name": self.custom_destinations.name if self.custom_destinations else self.default_destinations.name,
       "duration": self.default_destinations.duration if self.default_destinations else self.custom_destinations.duration,

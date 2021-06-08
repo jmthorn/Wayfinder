@@ -7,6 +7,9 @@ from app.models import Default_destination
 from app.models import Custom_destination
 from sqlalchemy import and_
 from app.models import db
+from urllib.request import Request, urlopen
+from urllib.parse import urlencode
+from json import loads 
 import requests
 import os
 
@@ -31,34 +34,59 @@ def events(trip_id):
     userId = current_user.id
     events = Event.query.filter(Event.trip_id == trip_id).all()
 
-    print('+++++++++++++++++++++++++++++++++++++++++++++')
+    # print('+++++++++++++++++++++++++++++++++++++++++++++')
+    # Sort events based on distance from eachother:
+
     apiKey = os.environ.get('GOOGLE_MAPS_KEY')
+    firstEvent = events[0]
+    event2_to_update = Event.query.get(firstEvent.to_dict()['id'])
+    event2_to_update.distance=0
+
+    db.session.add(event2_to_update)
+    db.session.commit()
     sortedEvents = [events[0]]
     newEvents = events[1:]
-
+    
     for i, val in enumerate(sortedEvents):
         currentNode = sortedEvents[i]
-        closestDist=1000000000
+        closestDist=10000000000000
         closestIndex = ''
-        for j, val in enumerate(events):
-            nextNode= events[j]
-            reqs = requests.get(f'https://maps.googleapis.com/maps/api/distancematrix/json?origins={currentNode.to_dict()["lat"]},{currentNode.to_dict()["lng"]}&destinations={nextNode.to_dict()["lat"]},{nextNode.to_dict()["lng"]}&key={apiKey}')
-            res = reqs.json()
-            duration = res['rows'][0]['elements'][0] 
-            seconds_duration = duration.get('duration', {}).get('value') 
-            print(seconds_duration)
+        for j, val in enumerate(newEvents):
+            nextNode= newEvents[j]
+            url = f'https://maps.googleapis.com/maps/api/distancematrix/json?origins={currentNode.to_dict()["lat"]},{currentNode.to_dict()["lng"]}&destinations={nextNode.to_dict()["lat"]},{nextNode.to_dict()["lng"]}&key={apiKey}'
+            reqs = urlopen(Request(url))
+            res = loads(reqs.read().decode("UTF-8"))
+            duration = res['rows'][0]['elements'][0]['duration']['value']
+            if duration < closestDist:
+                closestDist = duration
+                closestIndex = j
 
         if closestDist < 1000000000:
-            sortedEvents.append(closestIndex)
+
+            chosenEvent = newEvents[closestIndex]
+
+            event_to_update = Event.query.get(chosenEvent.to_dict()['id'])
+            event_to_update.distance=closestDist
+
+            db.session.add(event_to_update)
+            db.session.commit()
+
+            sortedEvents.append(newEvents[closestIndex])
+            newEvents = newEvents[:closestIndex] + newEvents[closestIndex+1:]
+
         closestDist=1000000000
         closestIndex = ''
 
-    print('+++++++++++++++++++++++++++++++++++++++++++++')
+    for i, val in enumerate(sortedEvents):
 
+            chosenEvent3 = sortedEvents[i]
+            event_to_update = Event.query.get(chosenEvent3.to_dict()['id'])
+            event_to_update.order=i
 
+            db.session.add(event_to_update)
+            db.session.commit()
 
-
-    return {"events": [event.to_dict() for event in events]}
+    return {"events": [event.to_dict() for event in sortedEvents]}
 
 
 
