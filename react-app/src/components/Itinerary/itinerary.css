@@ -1,0 +1,13 @@
+#itinerary-page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin-top: 10em;
+  margin-bottom: 6em;
+}
+
+#itinerary-title {
+  text-align: center;
+  font-size: 40px;
+}
