@@ -7,6 +7,8 @@ from app.models import Default_destination
 from app.models import Custom_destination
 from sqlalchemy import and_
 from app.models import db
+import requests
+import os
 
 
 
@@ -14,12 +16,59 @@ from app.models import db
 events_routes = Blueprint('events', __name__)
 
 
+# @events_routes.route('/<trip_id>', methods=['GET'])
+# @login_required
+# def events(trip_id):
+#     userId = current_user.id
+#     events = Event.query.filter(Event.trip_id == trip_id).all()
+#     return {"events": [event.to_dict() for event in events]}
+
+
+
 @events_routes.route('/<trip_id>', methods=['GET'])
 @login_required
 def events(trip_id):
     userId = current_user.id
     events = Event.query.filter(Event.trip_id == trip_id).all()
+
+    print('+++++++++++++++++++++++++++++++++++++++++++++')
+    apiKey = os.environ.get('GOOGLE_MAPS_KEY')
+    sortedEvents = [events[0]]
+    newEvents = events[1:]
+
+    for i, val in enumerate(sortedEvents):
+        currentNode = sortedEvents[i]
+        closestDist=1000000000
+        closestIndex = ''
+        for j, val in enumerate(events):
+            nextNode= events[j]
+            reqs = requests.get(f'https://maps.googleapis.com/maps/api/distancematrix/json?origins={currentNode.to_dict()["lat"]},{currentNode.to_dict()["lng"]}&destinations={nextNode.to_dict()["lat"]},{nextNode.to_dict()["lng"]}&key={apiKey}')
+            res = reqs.json()
+            duration = res['rows'][0]['elements'][0] 
+            seconds_duration = duration.get('duration', {}).get('value') 
+            print(seconds_duration)
+
+        if closestDist < 1000000000:
+            sortedEvents.append(closestIndex)
+        closestDist=1000000000
+        closestIndex = ''
+
+    print('+++++++++++++++++++++++++++++++++++++++++++++')
+
+
+
+
     return {"events": [event.to_dict() for event in events]}
+
+
+
+
+
+
+
+
+
+
 
 
 @events_routes.route('/', methods=['POST'])
@@ -41,6 +90,8 @@ def add_event():
     db.session.add(new_event)
     db.session.commit()
     return {"event": new_event.to_dict()}
+
+
 
 @events_routes.route('/<event_id>', methods=['PUT'])
 @login_required

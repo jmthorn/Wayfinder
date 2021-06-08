@@ -11,6 +11,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "fullcalendar": "^5.7.0",
+    "google-distance-matrix": "^1.1.1",
     "http-proxy-middleware": "^1.0.5",
     "moment": "^2.29.1",
     "react": "^17.0.0",
