@@ -37,3 +37,7 @@
 .event-nav-line {
   border-bottom: 1px solid lightgray;
 }
+
+#loaderDiv {
+  margin: auto;
+}

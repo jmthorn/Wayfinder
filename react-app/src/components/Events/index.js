@@ -4,6 +4,8 @@ import { Link, useParams, Route, NavLink } from 'react-router-dom';
 import Itinerary from '../Itinerary'
 import {removeEvent, getEvents} from '../../store/events'
 import './events.css'
+import Loader from "react-loader-spinner";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 const Destinations = () => {
 
@@ -38,9 +40,10 @@ const Destinations = () => {
                 // </NavLink>
             ))}
         </nav>
-        {/* <Route path="/events/itinerary/:tripId"> */}
+        <div id="loaderDiv">
+            <Loader type="ThreeDots" color="#017da7" height={80} width={80} timeout={5000}/>
+        </div>
         <Itinerary />
-        {/* </Route> */}
     </div>
   );
 }
