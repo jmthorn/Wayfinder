@@ -67,7 +67,11 @@ useEffect(() => {
       let days = 1;
       for (let i = 0; i < eventsArr.length; i++) { 
         let currentEvent = eventsArr[i]
-        currentEvent.start = moment(currentTime).add(currentEvent.distance, 's').toDate()
+        if (moment(currentTime).hour() === 8) { 
+          currentEvent.start = moment(currentTime).toDate()
+        }else {
+          currentEvent.start = moment(currentTime).add(currentEvent.distance, 's').toDate()
+        }
         currentEvent.end = moment(currentTime).add(currentEvent.duration, 'm').toDate()
         currentTime = currentEvent.end
         if(moment(currentEvent.end).hour() >= 16) { 
