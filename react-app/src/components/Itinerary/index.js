@@ -10,7 +10,7 @@ import "react-big-calendar/lib/css/react-big-calendar.css"
 import { getTrips } from '../../store/trips';
 import distance from 'google-distance-matrix';
 // var distance = require('google-distance-matrix');
-
+import './itinerary.css'
 
 
 const Itinerary = () => {
@@ -25,7 +25,7 @@ const Itinerary = () => {
   const dispatch = useDispatch()
   const today = new Date(); 
   const tripStartDate = new Date(chosenTrip[0]?.start_date) 
-  // const tripEndDate = new Date(chosenTrip[0]?.end_date) 
+  const tripEndDate = new Date(chosenTrip[0]?.end_date) 
   const [startDate, setDate] = useState("")
   const [apiKey, setApiKey] = useState('');
 
@@ -100,8 +100,9 @@ useEffect(() => {
       setDate(date)
   }
 
-  return startDate && eventsArr.length && (
-    <>
+  return (startDate && eventsArr.length && 
+    <div id="itinerary-page-container">
+      <div id="itinerary-title">{(tripEndDate.getTime()-tripStartDate.getTime())/(1000*3600*24)} DAYS IN {chosenTrip[0].name.toUpperCase()}</div>
       <div>
         <DnDCalendar
         localizer={localizer}
@@ -124,7 +125,7 @@ useEffect(() => {
         // onSelectEvent={handleSelectEvent}
         />
       </div>
-    </>
+    </div>
   );
 }
 

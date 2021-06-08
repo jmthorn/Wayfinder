@@ -10,7 +10,7 @@ import Geocode from "react-geocode";
 function CreateDestinationForm({cityId}) {
 
 
-  const [created, setCreated] = useState("CREATE TRIP")
+  const [created, setCreated] = useState("CREATE DESTINATION")
   const cities = useSelector(state => state.cities.cities)
   const chosenCity = cities?.cities?.filter((city) => city.id === cityId)[0]
   const chosenCityId = chosenCity?.id
