@@ -61,9 +61,9 @@ useEffect(() => {
 
     eventsArr.sort((a, b) => a.order - b.order)
 
-    if(eventsArr.length && startDate) { 
+    if(eventsArr.length && tripStartDate) { 
       
-      let currentTime = moment(startDate).add(8, 'h').toDate() //Tue Jun 22 2021 00:00:00 GMT-0500 (Central Daylight Time)
+      let currentTime = moment(tripStartDate).add(8, 'h').toDate() //Tue Jun 22 2021 00:00:00 GMT-0500 (Central Daylight Time)
       let days = 1;
       for (let i = 0; i < eventsArr.length; i++) { 
         let currentEvent = eventsArr[i]
@@ -75,18 +75,14 @@ useEffect(() => {
         currentEvent.end = moment(currentTime).add(currentEvent.duration, 'm').toDate()
         currentTime = currentEvent.end
         if(moment(currentEvent.end).hour() >= 16) { 
-          currentTime = moment(startDate).add(days, 'd').add(8, 'h').toDate()
+          currentTime = moment(tripStartDate).add(days, 'd').add(8, 'h').toDate()
           days += 1;
         }
       }
     }
-  }, [dispatch, eventsArr.length, startDate])
+  }, [dispatch, eventsArr.length, tripStartDate])
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
-
-
 
 
 
