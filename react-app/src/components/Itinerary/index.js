@@ -8,6 +8,9 @@ import { getEvents } from '../../store/events';
 import { useParams } from 'react-router';
 import "react-big-calendar/lib/css/react-big-calendar.css"
 import { getTrips } from '../../store/trips';
+import distance from 'google-distance-matrix';
+// var distance = require('google-distance-matrix');
+
 
 
 const Itinerary = () => {
@@ -24,6 +27,16 @@ const Itinerary = () => {
   const tripStartDate = new Date(chosenTrip[0]?.start_date) 
   // const tripEndDate = new Date(chosenTrip[0]?.end_date) 
   const [startDate, setDate] = useState("")
+  const [apiKey, setApiKey] = useState('');
+
+  useEffect(() => {
+  (async()=> {
+    const res = await fetch('/api/retrieve_api/');
+    const { apiKey } = await res.json();
+    setApiKey(apiKey);
+
+    })()
+  })
 
 
   useEffect(() => { 
@@ -37,94 +50,39 @@ const Itinerary = () => {
       dispatch(getTrips())
   }, [dispatch])
 
+  
+  
 
-  const rad = function(x) {
-    return x * Math.PI / 180;
-  };
+  
 
-  // Haversine Formula was provided by TA JM 
-  function haversineDiff (locationObject1, locationObject2) {
-  const radiusOfTheEarthInDesiredUnits = 3958.8;
-  const latitudeDifferentialInRadians = rad(locationObject2.lat - locationObject1.lat);
-  const longitudeDifferentialInRadians = rad(locationObject2.lng - locationObject1.lng);
-  const noIdea =
-    Math.sin(latitudeDifferentialInRadians / 2) * Math.sin(latitudeDifferentialInRadians / 2) +
-    Math.cos(rad(locationObject1.lat)) * Math.cos(rad(locationObject2.lat)) *
-    Math.sin(longitudeDifferentialInRadians / 2) * Math.sin(longitudeDifferentialInRadians / 2)
-    ;
-  const noIdea2 = 2 * Math.atan2(Math.sqrt(noIdea), Math.sqrt(1 - noIdea));
-  return radiusOfTheEarthInDesiredUnits * noIdea2;
-}
-
-
-// GOOGLE DISTANCE API
-
-// var origin1 = new google.maps.LatLng(55.930385, -3.118425);
-// var origin2 = 'Greenwich, England';
-// var destinationA = 'Stockholm, Sweden';
-// var destinationB = new google.maps.LatLng(50.087692, 14.421150);
-
-// var service = new google.maps.DistanceMatrixService();
-// service.getDistanceMatrix(
-//   {
-//     origins: [origin1, origin2],
-//     destinations: [destinationA, destinationB],
-//     travelMode: 'DRIVING',
-//     transitOptions: TransitOptions,
-//     drivingOptions: DrivingOptions,
-//     unitSystem: UnitSystem,
-//     avoidHighways: Boolean,
-//     avoidTolls: Boolean,
-//   }, callback);
-
-// function callback(response, status) {
-//   if (status == 'OK') {
-//     var origins = response.originAddresses;
-//     var destinations = response.destinationAddresses;
-
-//     for (var i = 0; i < origins.length; i++) {
-//       var results = response.rows[i].elements;
-//       for (var j = 0; j < results.length; j++) {
-//         var element = results[j];
-//         var distance = element.distance.text;
-//         var duration = element.duration.text;
-//         var from = origins[i];
-//         var to = destinations[j];
-//       }
-//     }
-//   }
-// }
-
-
+//This sorts by that distance and assignes start and end times to 'currentevent'
 useEffect(() => { 
     const firstEvent = eventsArr[0]
 
-    if(eventsArr.length && startDate) { 
-      for (let i = 0; i<eventsArr.length;i++) { 
-        let currentEvent = eventsArr[i]
-        let distance = haversineDiff(currentEvent, firstEvent)
-        currentEvent['distance'] = distance
-      }
+    eventsArr.sort((a, b) => a.order - b.order)
 
-      eventsArr.sort((a, b) => a.distance - b.distance)
-      console.log("2",eventsArr)
+    if(eventsArr.length && startDate) { 
+      
       let currentTime = moment(startDate).add(8, 'h').toDate() //Tue Jun 22 2021 00:00:00 GMT-0500 (Central Daylight Time)
-      let days = 0;
+      let days = 1;
       for (let i = 0; i < eventsArr.length; i++) { 
         let currentEvent = eventsArr[i]
-        currentEvent.start = currentTime
+        if (moment(currentTime).hour() === 8) { 
+          currentEvent.start = moment(currentTime).toDate()
+        }else {
+          currentEvent.start = moment(currentTime).add(currentEvent.distance, 's').toDate()
+        }
         currentEvent.end = moment(currentTime).add(currentEvent.duration, 'm').toDate()
         currentTime = currentEvent.end
-        console.log(currentEvent)
-        if(moment(currentEvent.end).hour() > 16) { 
-          currentTime = moment(startDate).add(1, 'd').add(8, 'h').toDate()
+        if(moment(currentEvent.end).hour() >= 16) { 
+          currentTime = moment(startDate).add(days, 'd').add(8, 'h').toDate()
           days += 1;
         }
       }
     }
   }, [dispatch, eventsArr.length, startDate])
 
-
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
 
@@ -146,9 +104,9 @@ useEffect(() => {
       setDate(date)
   }
 
-  return startDate && (
+  return startDate && eventsArr.length && (
     <>
-        <div>
+      <div>
         <DnDCalendar
         localizer={localizer}
         events={eventsArr}
@@ -163,14 +121,13 @@ useEffect(() => {
         resizable={true}
         defaultView="week"
         min={new Date( today.getFullYear(), today.getMonth(), today.getDate(), 8)}
-        max={new Date( today.getFullYear(), today.getMonth(), today.getDate(), 18)}
+        max={new Date( today.getFullYear(), today.getMonth(), today.getDate(), 19)}
         date={startDate}
         onNavigate={handleNavigate}
         // onSelectSlot={handleSelect}
         // onSelectEvent={handleSelectEvent}
         />
-  </div>
-
+      </div>
     </>
   );
 }

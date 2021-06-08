@@ -19,7 +19,7 @@ class Custom_destination(db.Model):
 
   cities = relationship("City", back_populates="custom_destinations")
   users = relationship("User", back_populates="custom_destinations")
-  events = relationship("Event", back_populates="custom_destinations")
+  events = relationship("Event", cascade="all, delete", back_populates="custom_destinations")
 
 
   def to_dict(self):
