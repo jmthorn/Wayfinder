@@ -10,9 +10,9 @@ A live Link to the website can be found here: https://wayfinder-app.herokuapp.co
 
 ![](https://wayfinder-images.s3.us-east-2.amazonaws.com/gif2.gif)
 
-![](https://archibnb-images.s3.us-east-2.amazonaws.com/gif3.gif)
+![](https://wayfinder-images.s3.us-east-2.amazonaws.com/gif3.gif)
 
-![](https://archibnb-images.s3.us-east-2.amazonaws.com/gif4.gif)
+![](https://wayfinder-images.s3.us-east-2.amazonaws.com/gif4.gif)
 
 ### Technologies
 
