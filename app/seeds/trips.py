@@ -15,7 +15,7 @@ def seed_trips():
     # now = datetime.now()
 
     T1 = Trip(user_id=1, 
-        city_id=4,
+        city_id=1,
         start_date=datetime(2021, 6, 20),
         end_date= datetime(2021, 6, 26)
         )

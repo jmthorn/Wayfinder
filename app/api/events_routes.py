@@ -10,7 +10,6 @@ from app.models import db
 from urllib.request import Request, urlopen
 from urllib.parse import urlencode
 from json import loads 
-# import requests
 import os
 
 

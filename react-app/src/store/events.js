@@ -102,7 +102,7 @@ export default function reducer(state=initialState, action)  {
     let newState = {}
     switch (action.type) { 
         case SET_EVENTS:
-            newState = {...state}
+            newState = {}
             for(let i=0; i < (action.payload.events).length; i++) {
                 newState[action.payload.events[i].id] = action.payload.events[i]
             }
