@@ -55,7 +55,11 @@ def events(trip_id):
             url = f'https://maps.googleapis.com/maps/api/distancematrix/json?origins={currentNode.to_dict()["lat"]},{currentNode.to_dict()["lng"]}&destinations={nextNode.to_dict()["lat"]},{nextNode.to_dict()["lng"]}&key={apiKey}'
             reqs = urlopen(Request(url))
             res = loads(reqs.read().decode("UTF-8"))
-            duration = res['rows'][0]['elements'][0]['duration']['value']
+            status = res['rows'][0]['elements'][0]['status']
+            if status == res['rows'][0]['elements'][0]['status'] == "ZERO_RESULTS":
+                duration = 3000
+            else:
+                duration = res['rows'][0]['elements'][0]['duration']['value']
             if duration < closestDist:
                 closestDist = duration
                 closestIndex = j
