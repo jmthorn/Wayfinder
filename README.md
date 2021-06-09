@@ -6,11 +6,19 @@ A live Link to the website can be found here: https://wayfinder-app.herokuapp.co
 
 ## A walkthrough of the website
 
+### Splash Page and Auth
+
 ![](https://wayfinder-images.s3.us-east-2.amazonaws.com/gif1.gif)
+
+### View Places and Destinations
 
 ![](https://wayfinder-images.s3.us-east-2.amazonaws.com/gif2.gif)
 
+### Book Events and Manage Trips
+
 ![](https://wayfinder-images.s3.us-east-2.amazonaws.com/gif3.gif)
+
+### View Itinerary
 
 ![](https://wayfinder-images.s3.us-east-2.amazonaws.com/gif4.gif)
 
