@@ -13,11 +13,12 @@
 }
 
 #destination-info {
-  padding: 1em;
+  padding: 1em 1em 3em 1em;
+  margin-bottom: 4em;
 }
 
 #dest-name {
-  font-size: 50px;
+  font-size: 45px;
   margin: 0.3em 0em;
 }
 
@@ -44,7 +45,14 @@
   justify-content: space-between;
 }
 
-#dest-button,
+#dest-button {
+  border: 2.5px solid black;
+  padding: 1em;
+  margin: 2em 4em 2em 0em;
+  background-color: white;
+  height: 5em;
+}
+
 #dest-edit-button {
   border: 2.5px solid black;
   padding: 1em;
