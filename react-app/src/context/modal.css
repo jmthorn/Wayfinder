@@ -139,3 +139,17 @@
 .select-trip:focus {
   outline: 0;
 }
+
+#events-detail-image {
+  width: 110.5%;
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  align-self: center;
+}
+
+#events-detail-image img {
+  width: 110%;
+  position: absolute;
+  bottom: -20px;
+}

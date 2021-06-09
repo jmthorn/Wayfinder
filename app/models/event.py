@@ -34,7 +34,8 @@ class Event(db.Model):
       "name": self.custom_destinations.name if self.custom_destinations else self.default_destinations.name,
       "duration": self.default_destinations.duration if self.default_destinations else self.custom_destinations.duration,
       "lat": self.default_destinations.lat if self.default_destinations else self.custom_destinations.lat,
-      "lng": self.default_destinations.lng if self.default_destinations else self.custom_destinations.lng
+      "lng": self.default_destinations.lng if self.default_destinations else self.custom_destinations.lng,
+      "image_url": self.default_destinations.image_url if self.default_destinations else self.custom_destinations.image_url
 
     }
 
