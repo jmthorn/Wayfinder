@@ -4,6 +4,7 @@ import {createTrip} from '../../store/trips'
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
+import { useHistory } from 'react-router';
 
 
 
@@ -16,6 +17,7 @@ function CreateTripForm({cityId}) {
   const chosenCity = cities.cities.filter((city) => city.id === cityId)[0]
   const chosenCityId = chosenCity.id
   const dispatch = useDispatch();
+  const history = useHistory()
   const [error, setError] = useState("");
 
 
@@ -25,7 +27,8 @@ function CreateTripForm({cityId}) {
       setError("Your end date is before your start date!")
     } else {
       setBooked("BOOKED!")
-      return dispatch(createTrip(chosenCityId, startDate, endDate))
+      dispatch(createTrip(chosenCityId, startDate, endDate))
+      history.push(`destinations/${chosenCityId}`)
     }
   };  
 

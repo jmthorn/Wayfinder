@@ -17,14 +17,12 @@ const Destinations = () => {
 
 
   useEffect(() => { 
-    if (destinations && !destinationName) { 
-        history.push(`/destinations/${cityId}/${destinations.default_destinations[0].name.split("_").join(" ")}`)
-    }
-  }, [dispatch,destinationName, destinations, cityId])
+    history.push(`/destinations/${cityId}/${destinations?.default_destinations[0].name.split("_").join(" ")}`)
+  }, [dispatch,cityId, destinations])
 
   useEffect(() => { 
       dispatch(getDestinations(cityId))
-  }, [dispatch])
+  }, [dispatch, cityId])
 
 
   const removeDestination = (destinationId) => { 
