@@ -8,7 +8,7 @@ A live Link to the website can be found here: https://wayfinder-app.herokuapp.co
 
 ![](https://wayfinder-images.s3.us-east-2.amazonaws.com/gif1.gif)
 
-<!-- ![](https://archibnb-images.s3.us-east-2.amazonaws.com/2-20.gif) -->
+![](https://wayfinder-images.s3.us-east-2.amazonaws.com/gif2.gif)
 
 <!-- ![](https://archibnb-images.s3.us-east-2.amazonaws.com/3-20.gif) -->
 
