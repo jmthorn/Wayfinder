@@ -39,6 +39,9 @@ const Destinations = () => {
                 </div>
                 // </NavLink>
             ))}
+            {!eventsArr.length &&  (
+                <div id="no-events">You have no events!</div>
+            )}
         </nav>
         <div id="loaderDiv">
             <Loader  type="ThreeDots" color="#32cec6" height={80} width={80} timeout={3000}/>

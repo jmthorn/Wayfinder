@@ -17,7 +17,7 @@ const Destinations = () => {
 
 
   useEffect(() => { 
-    history.push(`/destinations/${cityId}/${destinations?.default_destinations[0].name.split("_").join(" ")}`)
+    destinations && history.push(`/destinations/${cityId}/${destinations?.default_destinations[0].name.split("_").join(" ")}`)
   }, [dispatch,cityId, destinations])
 
   useEffect(() => { 
