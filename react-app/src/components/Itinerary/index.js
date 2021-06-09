@@ -4,7 +4,7 @@ import { Calendar, momentLocalizer } from 'react-big-calendar'
 import withDragAndDrop from "react-big-calendar/lib/addons/dragAndDrop";
 import moment from 'moment'
 import { useDispatch, useSelector } from 'react-redux';
-import { getEvents } from '../../store/events';
+import { getEvents, updateEvent } from '../../store/events';
 import { useParams } from 'react-router';
 import "react-big-calendar/lib/css/react-big-calendar.css"
 import { getTrips } from '../../store/trips';
@@ -61,6 +61,7 @@ useEffect(() => {
           currentEvent.start = moment(currentTime).add(currentEvent.distance, 's').toDate()
         }
         currentEvent.end = moment(currentTime).add(currentEvent.duration, 'm').toDate()
+        // dispatch(updateEvent(currentEvent.id, currentEvent.order, currentEvent.start,currentEvent.end))
         currentTime = currentEvent.end
         if(moment(currentEvent.end).hour() >= 16) { 
           currentTime = moment(tripStartDate).add(days, 'd').add(8, 'h').toDate()
@@ -81,6 +82,7 @@ useEffect(() => {
      let newEnd = event.end
      oldEvent["start"] = newStart
      oldEvent["end"] = newEnd
+    // dispatch(updateEvent(oldEvent.id, oldEvent.order, oldEvent.start,oldEvent.end))
   };
 
   const handleNavigate = (date, view, action) => {
@@ -98,7 +100,7 @@ useEffect(() => {
         endAccessor="end"
         style={{ height: 700 ,
                   width: 1000,
-                  margin: 50,
+                  margin:50,
               }}
         onEventDrop={handleDragEvent}
         selectable={true}

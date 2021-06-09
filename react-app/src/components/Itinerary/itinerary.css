@@ -3,8 +3,10 @@
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  margin-top: 10em;
-  margin-bottom: 6em;
+  /* margin-top: 400px;
+  margin-bottom: 400px; */
+  padding-top: 400px;
+  padding-bottom: 500px;
 }
 
 #itinerary-title {
