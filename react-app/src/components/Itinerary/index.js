@@ -8,8 +8,6 @@ import { getEvents } from '../../store/events';
 import { useParams } from 'react-router';
 import "react-big-calendar/lib/css/react-big-calendar.css"
 import { getTrips } from '../../store/trips';
-import distance from 'google-distance-matrix';
-// var distance = require('google-distance-matrix');
 import './itinerary.css'
 
 
@@ -27,16 +25,6 @@ const Itinerary = () => {
   const tripStartDate = new Date(chosenTrip[0]?.start_date) 
   const tripEndDate = new Date(chosenTrip[0]?.end_date) 
   const [startDate, setDate] = useState("")
-  const [apiKey, setApiKey] = useState('');
-
-  useEffect(() => {
-  (async()=> {
-    const res = await fetch('/api/retrieve_api/');
-    const { apiKey } = await res.json();
-    setApiKey(apiKey);
-
-    })()
-  })
 
 
   useEffect(() => { 
@@ -48,7 +36,7 @@ const Itinerary = () => {
   useEffect(() => { 
       dispatch(getEvents(trip_id))
       dispatch(getTrips())
-  }, [dispatch])
+  }, [dispatch, trip_id])
 
   
   
@@ -96,7 +84,6 @@ useEffect(() => {
   };
 
   const handleNavigate = (date, view, action) => {
-      console.log(typeof date, view, action)
       setDate(date)
   }
 
@@ -135,26 +122,3 @@ export default Itinerary;
 
 
 
-
-
-// itinerary.sort((a, b) => a - b)
-
-
-
-
-  // let dummyEvents = [
-  //     {
-  //         id:1,
-  //         // allDay: false,
-  //         end: new Date('May 30, 2021 14:13:00'),
-  //         start: new Date('May 30, 2021 12:13:00'),
-  //         title: 'hi',
-  //       },
-  //       {
-  //           id:2,
-  //           // allDay: true,
-  //           end: new Date('December 09, 2017 11:13:00'),
-  //           start: new Date('December 09, 2017 11:13:00'),
-  //           title: 'All Day Event',
-  //       },
-  //   ];

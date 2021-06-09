@@ -41,7 +41,7 @@ const Destinations = () => {
             ))}
         </nav>
         <div id="loaderDiv">
-            <Loader type="ThreeDots" color="#017da7" height={80} width={80} timeout={4000}/>
+            <Loader  type="ThreeDots" color="#32cec6" height={80} width={80} timeout={3000}/>
         </div>
         <Itinerary />
     </div>
