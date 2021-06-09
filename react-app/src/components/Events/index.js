@@ -4,8 +4,6 @@ import { Link, useParams, Route, NavLink } from 'react-router-dom';
 import Itinerary from '../Itinerary'
 import {removeEvent, getEvents} from '../../store/events'
 import './events.css'
-import Loader from "react-loader-spinner";
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 const Destinations = () => {
 
@@ -43,9 +41,7 @@ const Destinations = () => {
                 <div id="no-events">You have no events!</div>
             )}
         </nav>
-        <div id="loaderDiv">
-            <Loader  type="ThreeDots" color="#32cec6" height={80} width={80} timeout={3000}/>
-        </div>
+
         <Itinerary />
     </div>
   );

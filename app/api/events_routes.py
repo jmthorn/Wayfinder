@@ -35,6 +35,8 @@ def events(trip_id):
 
     # print('+++++++++++++++++++++++++++++++++++++++++++++')
     # Sort events based on distance from eachother:
+    if len(events) == 0:
+        return {"events": []}
 
     apiKey = os.environ.get('GOOGLE_MAPS_KEY')
     firstEvent = events[0]
