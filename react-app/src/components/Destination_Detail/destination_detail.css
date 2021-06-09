@@ -20,6 +20,7 @@
 #dest-name {
   font-size: 45px;
   margin: 0.3em 0em;
+  width: 80%;
 }
 
 #dest-line {
@@ -50,7 +51,7 @@
   padding: 1em;
   margin: 2em 4em 2em 0em;
   background-color: white;
-  height: 5em;
+  height: 4em;
 }
 
 #dest-edit-button {
