@@ -72,7 +72,6 @@ export const updateEvent = (event_id, order, start, end) => async(dispatch) => {
     if(data.errors) { 
         return data;
     }
-    console.log(data)
     dispatch(update(data))
     return {}
 }

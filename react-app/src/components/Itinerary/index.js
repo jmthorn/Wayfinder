@@ -95,9 +95,7 @@ useEffect(() => {
   }
 
   const handleSelectEvent = (event) => { 
-
     setSelectedEvent(event)
-    console.log(selectedEvent)
     setShowModal(true)
 
   }
