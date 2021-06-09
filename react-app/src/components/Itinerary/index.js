@@ -109,8 +109,8 @@ useEffect(() => {
         events={eventsArr}
         startAccessor="start"
         endAccessor="end"
-        style={{ height: 660 ,
-                  width: 1000,
+        style={{ height: 640 ,
+                  width: 900,
                   margin:50,
               }}
         onEventDrop={handleDragEvent}
