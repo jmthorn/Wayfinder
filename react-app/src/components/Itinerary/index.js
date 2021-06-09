@@ -8,7 +8,8 @@ import { useParams } from 'react-router';
 import { getTrips } from '../../store/trips';
 import { Modal } from '../../context/modal';
 import EventDetails from './eventdetails';
-
+import Loader from "react-loader-spinner";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import "react-big-calendar/lib/css/react-big-calendar.css"
 import './itinerary.css'
 
@@ -100,8 +101,8 @@ useEffect(() => {
     setShowModal(true)
 
   }
-
-  return (startDate && eventsArr.length && 
+// startDate && eventsArr.length &&
+  return (startDate && eventsArr.length ? ( 
     <div id="itinerary-page-container">
       <div id="itinerary-title">{(tripEndDate.getTime()-tripStartDate.getTime())/(1000*3600*24)} DAYS IN {chosenTrip[0].name.toUpperCase()}</div>
       <div>
@@ -132,7 +133,7 @@ useEffect(() => {
         </Modal>
       )}
     </div>
-  );
+  ) : <div id="loaderDiv"><Loader  type="ThreeDots" color="#32cec6" height={80} width={80} timeout={3000}/></div>);
 }
 
 export default Itinerary;
