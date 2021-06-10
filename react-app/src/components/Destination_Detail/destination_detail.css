@@ -1,3 +1,7 @@
+#destinations-detail-container {
+  overflow: scroll;
+}
+
 #destination-image {
   max-width: 100%;
   height: 27em;
@@ -36,7 +40,7 @@
 }
 
 #dest-dur {
-  margin: 2em 0em 1em;
+  margin: 2em 0em 2em;
   font-weight: 600;
   font-size: 20px;
 }
@@ -50,19 +54,26 @@
   border: 2.5px solid black;
   padding: 1em;
   margin: 2em 4em 2em 0em;
-  background-color: white;
+  background-color: transparent;
   height: 4em;
 }
 
 #dest-edit-button {
   border: 2.5px solid black;
   padding: 1em;
-  margin: 2em 4em 2em 0em;
-  background-color: white;
+  margin: 0em 4em 0em 0em;
+  background-color: transparent;
 }
 
 #dest-button:active,
 #dest-edit-button:active {
   background-color: black;
-  color: white;
+  color: transparent;
+}
+
+.maps-container {
+  height: 200px;
+  margin-top: 2em;
+  display: block;
+  position: relative;
 }

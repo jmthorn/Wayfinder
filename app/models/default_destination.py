@@ -28,6 +28,8 @@ class Default_destination(db.Model):
       "description": self.description,
       "image_url": self.image_url,
       "address": self.address,
-      "duration": self.duration
+      "duration": self.duration,
+      "lat": self.lat,
+      "lng":self.lng
 
     }
