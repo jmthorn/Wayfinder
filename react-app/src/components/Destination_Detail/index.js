@@ -26,7 +26,6 @@ const Destinations = () => {
     })()
   })
 
-  console.log(destination)
   
   useEffect(() => { 
       dispatch(getDestination(destinationName))
