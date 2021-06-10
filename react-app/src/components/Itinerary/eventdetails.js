@@ -22,7 +22,7 @@ function EventDetails({selectedEvent}) {
       <h2 className="modal-title">{selectedEvent.name}</h2>
       <div className="modal-line"></div>
       <div className="modal-form"></div>
-      <div className="modal-events-duration">Duration: {(selectedEvent.duration)/60} Hours</div>
+      <div className="modal-events-duration">Duration: {(Math.round(((selectedEvent.duration)/60)*100))/100} Hours</div>
       <div className="modal-events-time">{moment(selectedEvent.start).format("LT")} - {moment(selectedEvent.end).format("LT")}</div>
     </>
   );
