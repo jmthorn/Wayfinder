@@ -50,3 +50,20 @@
   font-size: 30px;
   margin: 2em;
 }
+
+#add-event {
+  margin: 2em 2em 5em 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+#add-event button {
+  margin-top: 0.3em;
+  font-size: 40px;
+  background-color: transparent;
+  border: 0px solid transparent;
+}

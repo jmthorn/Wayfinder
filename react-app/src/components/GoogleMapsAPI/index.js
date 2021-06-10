@@ -10,7 +10,6 @@ const mapStyles = {
 export function MapContainer (props) {
 
     let { coordinate } = props
-    console.log("COORDINATE", coordinate)
 
     return (
       <Map
