@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams, Route } from 'react-router-dom';
 import {getDestination, getDestinations} from '../../store/destinations'
 import CreateEventModal from '../CreateEventModal';
 import UpdateDestinationsModal from '../UpdateDestinationsModal'
+import GoogleApiWrapper from '../GoogleMapsAPI';
+
 import './destination_detail.css'
 
 const Destinations = () => {
@@ -13,8 +15,19 @@ const Destinations = () => {
   const destination = useSelector(state => state?.destinations?.destination)
   const { cityId, destinationName } = useParams()
   const destination_name = destinationName.split("_").join(" ")
+  const [apiKey, setApiKey] = useState('');
 
 
+  useEffect(() => {
+  (async()=> {
+    const res = await fetch('/api/retrieve_api/');
+    const { apiKey } = await res.json();
+    setApiKey(apiKey);
+    })()
+  })
+
+  console.log(destination)
+  
   useEffect(() => { 
       dispatch(getDestination(destinationName))
 
@@ -37,6 +50,9 @@ const Destinations = () => {
           {destination?.destination?.user_id && (
             <UpdateDestinationsModal destination={destination?.destination}/>
           )}
+          <div className="maps-container">
+            {destination?.destination && <GoogleApiWrapper apiKey={apiKey} coordinate={{lat:destination?.destination?.lat,lng:destination?.destination?.lng}}/>}
+          </div>
         </div>
     </div>
   );
