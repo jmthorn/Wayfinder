@@ -10,7 +10,7 @@ const mapStyles = {
 export function MapContainer (props) {
 
     let { coordinate } = props
-
+    
     return (
       <Map
         google={props.google}

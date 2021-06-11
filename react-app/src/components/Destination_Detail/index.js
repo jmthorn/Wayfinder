@@ -32,6 +32,7 @@ const Destinations = () => {
 
   }, [dispatch, cityId, destinationName])
 
+  
   return (
     <div id="destinations-detail-container">
         <div id="destination-image">
