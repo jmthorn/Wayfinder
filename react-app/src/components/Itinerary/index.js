@@ -49,6 +49,7 @@ const Itinerary = () => {
 
 //This sorts by that distance and assignes start and end times to 'currentevent'
 useEffect(() => { 
+
     const firstEvent = eventsArr[0]
 
     eventsArr.sort((a, b) => a.order - b.order)
