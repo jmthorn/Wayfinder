@@ -31,7 +31,9 @@ class Custom_destination(db.Model):
       "image_url": self.image_url,
       "address": self.address,
       "duration": self.duration,
-      "user_id": self.user_id
+      "user_id": self.user_id,
+      "lat": self.lat,
+      "lng":self.lng
 
     }
 
