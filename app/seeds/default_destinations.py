@@ -704,106 +704,206 @@ def seed_default_destinations():
         lng= 18.38327035863844,
         duration=120
         )
-    # D71 = Default_destination(
-    #     name='', 
-    #     city_id=8,
-    #     description="",
-    #     image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/71.jpeg",
-    #     address="",
-    #     lat=,
-    #     lng=-,
-    #     duration= 180
-    #     )
-    # D72 = Default_destination(
-    #     name='', 
-    #     city_id=8,
-    #     description="",
-    #     image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/72.jpeg",
-    #     address="",
-    #     lat=,
-    #     lng= ,
-    #     duration= 180
-    #     )
-    # D73 = Default_destination(
-    #     name='', 
-    #     city_id=8,
-    #     description="",
-    #     image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/73.jpeg",
-    #     address="",
-    #     lat=,
-    #     lng= ,
-    #     duration=120
-    #     )
-    # D74 = Default_destination(
-    #     name='', 
-    #     city_id=8,
-    #     description="",
-    #     image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/74.jpeg",
-    #     address="",
-    #     lat=,
-    #     lng= ,
-    #     duration=30
-    #     )
-    # D75 = Default_destination(
-    #     name='', 
-    #     city_id=8,
-    #     description="",
-    #     image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/75.jpeg",
-    #     address="",
-    #     lat=,
-    #     lng= ,
-    #     duration=180
-    #     )
-    # D76 = Default_destination(
-    #     name='', 
-    #     city_id=8,
-    #     description="",
-    #     image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/76.jpeg",
-    #     address="",
-    #     lat=,
-    #     lng=,
-    #     duration=90
-    #     )
-    # D77 = Default_destination(
-    #     name='', 
-    #     city_id=8,
-    #     description="",
-    #     image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/77.jpeg",
-    #     address="",
-    #     lat=,
-    #     lng= ,
-    #     duration= 60
-    #     )
-    # D78 = Default_destination(
-    #     name='', 
-    #     city_id=8,
-    #     description="",
-    #     image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/78.jpeg",
-    #     address="",
-    #     lat=,
-    #     lng= ,
-    #     duration=120
-    #     )
-    # D79 = Default_destination(
-    #     name='', 
-    #     city_id=8,
-    #     description="",
-    #     image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/79.jpeg",
-    #     address="",
-    #     lat=,
-    #     lng= ,
-    #     duration=240
-    #     )
-    # D80 = Default_destination(
-    #     name='', 
-    #     city_id=8,
-    #     description="",
-    #     image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/80.jpeg",
-    #     address="",
-    #     lat=,
-    #     lng= ,
-    #     duration=120
-    #     )
+    D71 = Default_destination(
+        name='Road to Hana', 
+        city_id=8,
+        description="The curvaceous Road to Hana, which hugs Maui's northeastern shore around Haleakalā National Park, is one of the island's most memorable experiences, one that will make the hassle of renting a car worth it. The 52-mile road harks back to a Hawaii before shopping malls and crowds, with 59 bridges to cross—46 of which have only one lane. The trip can easily take a full day, two if you stay overnight. It's a feast for the senses as well, with plenty to see as you stop along the way. Whatever you do, be sure to visit one of the many roadside stands that sell fresh fruit, smoothies, hand-carved Koa wood mementos, and—best of all—warm banana bread.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/71.jpeg",
+        address="Hana, HI 96713",
+        lat=20.76020765866085,
+        lng=-155.98785183937224,
+        duration= 60
+        )
+    D72 = Default_destination(
+        name='Haleakalā National Park', 
+        city_id=8,
+        description="The highest point on Maui is also one of its most visited: Haleakalā Crater provides epic, sweeping views of the island from an elevation of just over 10,000 feet. The visitor center is a great place to start, whether you're driving up in a rental car, opting for a sunrise van tour, or getting a little more adventurous with a backpacking trip on the famous Sliding Sands Trail. Come prepared with an extra layer—weather at this elevation can change drastically. At sunrise in the middle of summer, the temperature at the summit is likely to hover around 50 degrees Fahrenheit.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/72.jpeg",
+        address="Haleakala Hwy Kula, Hawaii, 96790 United States",
+        lat=20.786616609357008,
+        lng= -156.30655421407224,
+        duration= 200
+        )
+    D73 = Default_destination(
+        name='Feast at Lele', 
+        city_id=8,
+        description="Don't come to the Feast at Lele expecting plastic leis, screaming children, and a sad buffet line; rather, this is a quintessential Maui luau without the cheesiness. The five-course dinner (served at private tables—a rarity on the luau scene) pairs live performances with cuisine from four different Pacific island regions: first Hawaii, then Aotearoa (New Zealand), Tahiti, and Samoa. Then comes dessert. The food is great. Standouts include a five-hour braised beef with kiwi jus from New Zealand. Come hungry—the portions are large and you won't want to miss out on the final note: a vanilla-coconut-lime mousse cake with caramelized pineapple.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/73.jpeg",
+        address="505 Front St Lahaina, Hawaii, 96761 United States",
+        lat=20.868119837729154,
+        lng= -156.6752084601044,
+        duration=120
+        )
+    D74 = Default_destination(
+        name='Kula Botanical Garden', 
+        city_id=8,
+        description="What began in 1977 as a native plant reserve has transformed into Kula Botanical Garden, one of upcountry Maui's most beloved attractions, visited by thousands every year. Thanks to its location on the slopes of Haleakalā, the rich volcanic soil provides fertile ground for a great variety of plants, each labeled and many native to Maui. Admission is only $10 for adults—a fair price to pay to view more than 2,000 plants.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/74.jpeg",
+        address="638 Kekaulike Ave Kula, Hawaii, 96790 United States",
+        lat=20.742301421004424,
+        lng= -156.32545757545088,
+        duration=60
+        )
+    D75 = Default_destination(
+        name='Makena Cove', 
+        city_id=8,
+        description="Tucked between a few houses and behind a stone wall, the oasis of Makena Cove has a real feeling of discovery to it. Although most visitors are familiar with Makena Beach just to the north, very few take the extra steps to this gorgeous outcrop where volcanic rock meets the sea in spectacular fashion. The waves are dramatic, the crowds are nonexistent, and the sense of adventure is real. Come for a sunset mid-week and you're likely to have the place pretty much to yourself.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/75.jpeg",
+        address="6468 Makena Alanui Kihei, Hawaii, 96753",
+        lat=20.640743667964355,
+        lng= -156.4438828447635,
+        duration=180
+        )
+    D76 = Default_destination(
+        name='Pipiwai Trail', 
+        city_id=8,
+        description="It's about the journey, not the destination, right? On the Pipiwai Trail, it's about both. The remote trail is about 12 miles past Hana town on the Road To Hana. There are bamboo forests, a well-maintained trail, and not one, but two waterfalls. And at just about four miles roundtrip, it's a doable hike for people of all ages. As part of the Kīpahulu District inside Haleakalā National Park, you can expect a clean trail, beautifully maintained bridges, boardwalks, and rock steps. Make sure to stop for a breather in the bamboo forests—the sounds of bamboo trees clicking against each other in the wind is the kind of chilling nature moment people seek when they come to Maui. About three-fourths of the way through, you'll encounter the 185-foot Makahiku Falls which is, crazily, small potatoes compared to the 400-foot Waimoku Falls where the trail concludes.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/76.jpeg",
+        address="42222 Hana Hwy Hāna, Hawaii, 96713 United States",
+        lat=20.66534491814718,
+        lng= -156.04227801592705,
+        duration=180
+        )
+    D77 = Default_destination(
+        name='Ho\'okipa Beach Park', 
+        city_id=8,
+        description="Located miles away from the crowds, this pristine beach is nestled on the island's north shore alongside the Road To Hana. Thanks to its consistent winds, large waves, and sprawling reef system, this is one of Hawaii's best spots for windsurfing. Keep an eye out for the abundance of honu (green sea turtles). Many people miss these mystical sea creatures, especially as they blend in with the numerous exposed reefs and rocks along the beach. In the early evening, they tend to emerge from the sea to rest and, perhaps, to watch the beautiful sunsets. Maui institution Mama's Fish House is just down the road, so you can fuel up on locally-caught fish tacos and lobster tails after a day on the beach.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/77.jpeg",
+        address="179 Hana Highway Paia, Hawaii, 96779 United States",
+        lat=20.917687477567316,
+        lng= -156.38013826010356,
+        duration= 180
+        )
+    D78 = Default_destination(
+        name='Wailea Golf Club', 
+        city_id=8,
+        description="The Wailea Golf Club is one of the world's great golf destinations. Three distinct courses offer a variety of terrain and challenges, keeping pros raving and avid amateurs coming back year after year to better their game. The Wailea Emerald course has fabulous ocean views from every hole. The Wailea Blue's location, in the foothills of Haleakalā, provide a uniquely challenging course with unforgettable vistas over the island's largest dormant volcano.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/78.jpeg",
+        address="100 Wailea Golf Club Drive Wailea, Hawaii, 96753 United States",
+        lat=20.675988018257225,
+        lng= -156.43437344661592,
+        duration=220
+        )
+    D79 = Default_destination(
+        name='D.T. Fleming Park', 
+        city_id=8,
+        description="With food, amenities, soft sand, and approachable waves, this is the perfect beach for families. The waves can be aggressive on occasion, but generally the water is safe. It's adjacent to the Ritz Carlton and Kapalua resorts, so it's not one of Maui's more remote beaches, but that's not why you come here. It has everything you need, from restrooms complete with outdoor rinse showers, a burger shack for a snack, plenty of knowledgable lifeguards, barbecue grills, picnic tables, a payphone (hey, who knows what you might need), and ironwood trees in case you need a bit of shade. Go for a swim, bring the kids, float around, and let loose. This is carefree Hawaii at its best.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/79.jpeg",
+        address="Lower Honoapiilani Rd Lahaina, Hawaii, 96761 United States",
+        lat=20.976147714162195,
+        lng= -156.6772740447581,
+        duration=240
+        )
+    D80 = Default_destination(
+        name='Blue Hawaiian Helicopters', 
+        city_id=8,
+        description="Everyone who walks away from a Blue Hawaiian helicopter tour calls it a must-do experience on Maui—the choppers fill up fast, so be sure to reserve in advance. Departing from Kahului, Blue Hawaiian then lifts you up and away for a 65-minute loop around the island's perimeter. You're in for views that can only be seen from the sky—each tour promises volcanos, soaring oceanfront cliffs, cascading waterfalls, rugged coastline, and lush valleys, many of which aren't accessible any other way, with plenty of commentary from knowledgable pilots.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/80.jpeg",
+        address="1, Lelepio Pl, Kahului, HI 96732",
+        lat=20.89471627927804,
+        lng= -156.43087926808,
+        duration=120
+        )
+    D81 = Default_destination(
+        name='Brooklyn Bridge', 
+        city_id=9,
+        description="When the Brooklyn Bridge was constructed in 1883—extending 1,595 feet across the East River, connecting lower Manhattan to Brooklyn Heights—it was the longest suspension bridge in the world. Now, it’s a historic staple of the New York City skyline, transporting commuter car traffic underneath and touristic foot traffic above. Standing before arches and rectangles with city skyscrapers rising in the distance, will at once inspire a sense of grandiosity and slightness.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/81.jpeg",
+        address="Furman St., Pier 1 Brooklyn, New York , 11201 United States",
+        lat=40.7034705315703,
+        lng=-73.99523826916747,
+        duration= 180
+        )
+    D82 = Default_destination(
+        name='The High Line', 
+        city_id=9,
+        description="The High Line is a perfect example of what New York City does best: cleverly rehabs old spaces into exactly what you want them to be. When a 1.45-mile-long abandoned freight rail on Manhattan’s West End was transformed into an elevated, mixed-use public park in 2009, New Yorkers came running. Towering 30 feet above buzzing 11th Avenue, the High Line is a masterful feat of landscape architecture that melds walkways, benches, and chaise lounges with grass, perennials, trees, and bushes in perfect unkempt-kempt harmony.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/82.jpeg",
+        address="New York, NY 10011",
+        lat=40.748104065723915,
+        lng=  -74.0047223401129,
+        duration= 180
+        )
+    D83 = Default_destination(
+        name='Central Park', 
+        city_id=9,
+        description="Step off the crowded sidewalks of 59th Street into Central Park and you’ll hardly realize what lies before you: 693 acres of man-made gardens, meadows, forests, and rolling hillsides. If you ambled down every one of Central Park’s pathways, you would walk 58 miles. Along the way, you pass fountains, monuments, sculptures, bridges, and arches, plus 21 playgrounds, a winter ice-skating rink, a zoo, and even a castle. But you’d hardly notice the four major crosstown thoroughfares, which cleverly disappear into foliage-covered tunnels.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/83.jpeg",
+        address="Fifth Ave. and 59th St. New York, New York, 10019 United States",
+        lat=40.78124616234897,
+        lng= -73.96652091828314,
+        duration=120
+        )
+    D84 = Default_destination(
+        name='The Cloisters', 
+        city_id=9,
+        description="Located on four acres in northern Manhattan's Fort Tryon Park, the Met Cloisters is a branch of the Metropolitan Museum of Art and is America’s only museum dedicated exclusively to the art and architecture of the Middle Ages. The building overlooks the Hudson River and actually incorporates five medieval-inspired cloisters into a modern museum structure, creating a historic, contextualized backdrop in which to view the art.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/84.jpeg",
+        address="99 Margaret Corbin Dr. New York, New York, 10040 United States",
+        lat=40.86522348073598,
+        lng= -73.93176764429302,
+        duration=120
+        )
+    D85 = Default_destination(
+        name='Whitney Museum of American Art', 
+        city_id=9,
+        description="The Whitney got a major upgrade when it relocated from the Upper East Side to its vastly-expanded Meatpacking headquarters in 2015. It houses 50,000 square feet of indoor galleries with works by Jean Michel Basquiat, Richard Avedon, and Alexander Calder, four outdoor exhibition spaces and terraces, and a ground-floor restaurant and top-floor bar, both by Danny Meyer, one of the town’s best-known restaurateurs. The floors are connected by two artist-designed elevators (albeit slow-moving, crowded ones). If mobility isn’t an issue, take the stairs instead, which offer uninterrupted views of the Hudson river. The upper floors and sculpture terraces are also connected by a series of exterior staircases, with great views of the downtown skyline, and a rare opportunity to experience art en plein aire.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/85.jpeg",
+        address="99 Gansevoort St. New York, New York, 10014 United States",
+        lat=40.73973594417336,
+        lng= -74.00898233080517,
+        duration=180
+        )
+    D86 = Default_destination(
+        name='The Metropolitan Museum of Art', 
+        city_id=9,
+        description="For nearly a century and a half, the Met has remained the cultural epicenter of New York City, thanks to forward-thinking exhibits and an extensive permanent collection. With its Gothic-Revival-style building, iconic tiered steps, and Central Park location, the building is a sight to be seen. But step inside its Great Hall—as a ceaseless parade of museumgoers move to-and-fro—and you’ll feel the overwhelming sense of possibility and discovery that lays beyond. If you've got limited time or compatriots with limited attention spans, start with the Temple of Dendur, a 2,000-year-old soaring Egyptian temple (the only complete one in the Western Hemisphere)",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/86.jpeg",
+        address="1000 Fifth Ave. New York , New York , 10028 United States",
+        lat=40.779303590995454,
+        lng=-73.9628956154594,
+        duration=120
+        )
+    D87 = Default_destination(
+        name='The Morgan Library & Museum', 
+        city_id=9,
+        description="The Morgan is like a multi-hyphenate millennial—only instead of actress/model/influencer/whatever, it’s museum/library/landmark/historic site/music venue. Inside the multimillionaire’s personal library, expanded into a must-see museum and cultural space, you'll find rare artifacts, paintings, and books, some dating back to 4000 B.C. that are worth more than your house. In particular the museum is home to one of 23 copies of the original Declaration of Independence; Mozart's handwritten score of the Haffner Symphony; the collected works of African American poet Phillis Wheatley; the only extant manuscript of Milton's Paradise Lost; and Charles Dickens’s manuscript of A Christmas Carol. Swoon.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/87.jpeg",
+        address="225 Madison Ave. New York, New York, 10016 United States",
+        lat=40.74933129752125,
+        lng= -73.98152650196863,
+        duration= 60
+        )
+    D88 = Default_destination(
+        name='Statue of Liberty', 
+        city_id=9,
+        description="In 2019 4.2 million tourists visited Liberty Island, the 14-acre swath of land one mile south of lower Manhattan where the Statue of Liberty rests. While there is no fee to visit Liberty Island, you do have to pay for a round-trip ferry ride via Statue Cruises. The ferry also stops on Ellis Island, part of the national park, which houses the Ellis Island National Museum of Immigration, where visitors can search ship manifests for the records of their relatives. If you plan to visit the Statue’s pedestal or crown, plan ahead: There are a limited number of tickets available each day and they sell out weeks, if not months, in advance. Also plan on spending the day: It can six hours to properly visit the statue and Ellis Island.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/88.jpeg",
+        address="Liberty Island New York, New York, 10004 United States",
+        lat=40.68962579843671,
+        lng= -74.04492383262573,
+        duration=120
+        )
+    D89 = Default_destination(
+        name='9/11 Memorial and Museum', 
+        city_id=9,
+        description="Every American should visit the 9/11 Memorial and Museum at least once. As you enter the museum, you descend from the street to bedrock level—the foundation of the former Twin Towers—and are placed in a meditative mindset, forced to recall where you were on that fateful day. The museum itself is a masterful balance: It's grand in scale, contemplative in its construction, and personal in its execution. It pays homage to the enormity of the loss, both physical and spiritual.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/89.jpeg",
+        address="180 Greenwich St. New York, New York, 10007 United States",
+        lat=40.71156106425868,
+        lng= -74.01245714429756,
+        duration=180
+        )
+    D90 = Default_destination(
+        name='Rockefeller Center', 
+        city_id=9,
+        description="Rockefeller Center sits in the heart of midtown Manhattan, both in terms of its physical location and its prominent place in the city's folklore and culture. Whether you want to check out a performance on the plaza outside the TODAY show, visit the Christmas tree, or practice your best moves on the ice skating rink, you're in for an iconic, family-friendly experience. If you buy a ticket to Top of the Rock, you'll enjoy spectacular views of the city below. No matter where you are, you're bound to be constantly pointing and shouting “hey, look at that!”",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/90.jpeg",
+        address="45 Rockefeller Plaza New York, New York, 10111 United States",
+        lat=40.75980276459208,
+        lng= -73.97869008662386,
+        duration=80
+        )
 
 
 
@@ -877,16 +977,26 @@ def seed_default_destinations():
     db.session.add(D68)
     db.session.add(D69)
     db.session.add(D70)
-    # db.session.add(D71)
-    # db.session.add(D72)
-    # db.session.add(D73)
-    # db.session.add(D74)
-    # db.session.add(D75)
-    # db.session.add(D76)
-    # db.session.add(D77)
-    # db.session.add(D78)
-    # db.session.add(D79)
-    # db.session.add(D80)
+    db.session.add(D71)
+    db.session.add(D72)
+    db.session.add(D73)
+    db.session.add(D74)
+    db.session.add(D75)
+    db.session.add(D76)
+    db.session.add(D77)
+    db.session.add(D78)
+    db.session.add(D79)
+    db.session.add(D80)
+    db.session.add(D81)
+    db.session.add(D82)
+    db.session.add(D83)
+    db.session.add(D84)
+    db.session.add(D85)
+    db.session.add(D86)
+    db.session.add(D87)
+    db.session.add(D88)
+    db.session.add(D89)
+    db.session.add(D90)
 
 
     db.session.commit()
