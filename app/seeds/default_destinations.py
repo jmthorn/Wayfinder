@@ -884,16 +884,16 @@ def seed_default_destinations():
         lng= -74.04492383262573,
         duration=120
         )
-    D89 = Default_destination(
-        name='9/11 Memorial and Museum', 
-        city_id=9,
-        description="Every American should visit the 9/11 Memorial and Museum at least once. As you enter the museum, you descend from the street to bedrock level—the foundation of the former Twin Towers—and are placed in a meditative mindset, forced to recall where you were on that fateful day. The museum itself is a masterful balance: It's grand in scale, contemplative in its construction, and personal in its execution. It pays homage to the enormity of the loss, both physical and spiritual.",
-        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/89.jpeg",
-        address="180 Greenwich St. New York, New York, 10007 United States",
-        lat=40.71156106425868,
-        lng= -74.01245714429756,
-        duration=180
-        )
+    # D89 = Default_destination(
+    #     name='9/11 Memorial and Museum', 
+    #     city_id=9,
+    #     description="Every American should visit the 9/11 Memorial and Museum at least once. As you enter the museum, you descend from the street to bedrock level—the foundation of the former Twin Towers—and are placed in a meditative mindset, forced to recall where you were on that fateful day. The museum itself is a masterful balance: It's grand in scale, contemplative in its construction, and personal in its execution. It pays homage to the enormity of the loss, both physical and spiritual.",
+    #     image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/89.jpeg",
+    #     address="180 Greenwich St. New York, New York, 10007 United States",
+    #     lat=40.71156106425868,
+    #     lng= -74.01245714429756,
+    #     duration=180
+    #     )
     D90 = Default_destination(
         name='Rockefeller Center', 
         city_id=9,
@@ -995,7 +995,7 @@ def seed_default_destinations():
     db.session.add(D86)
     db.session.add(D87)
     db.session.add(D88)
-    db.session.add(D89)
+    # db.session.add(D89)
     db.session.add(D90)
 
 
