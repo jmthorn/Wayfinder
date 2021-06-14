@@ -19,8 +19,10 @@ const SignUpForm = () => {
     if (password === repeatPassword) {
       const data = await dispatch(signUp(username, email, password));
       if (data.errors) {
-      setErrors(data.errors);
-    }
+        setErrors(data.errors);
+      }
+    } else { 
+      setErrors(["Passwords do not match!"])
     }
   };
 
@@ -51,7 +53,7 @@ const SignUpForm = () => {
         <div className="auth-line"></div>
           <div className="auth-errors">
             {errors.map((error) => (
-              <div>{error}</div>
+              <div key={error}>{error}</div>
             ))}
           </div>
         <div>

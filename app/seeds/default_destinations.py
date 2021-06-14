@@ -11,7 +11,7 @@ def seed_default_destinations():
         address="Mt Bonnell, Austin, TX 78731",
         lat=30.321982413719372,
         lng= -97.77325451940332,
-        duration=30
+        duration=60
         )
     D2 = Default_destination(
         name='Texas State Capitol', 
@@ -31,7 +31,7 @@ def seed_default_destinations():
         address="Ann and Roy Butler Hike and Bike Trail, Austin, TX",
         lat=30.25924009716859,
         lng= -97.74361154477457,
-        duration=120
+        duration=180
         )
     D4 = Default_destination(
         name='Barton Springs Pool', 
@@ -81,7 +81,7 @@ def seed_default_destinations():
         address="1300 S. Congress Ave.",
         lat=30.249568237770504,
         lng= -97.74940244477476,
-        duration=30
+        duration=70
         )
     D9 = Default_destination(
         name='Zilker Botanical Garden', 
@@ -162,7 +162,7 @@ def seed_default_destinations():
         address="111 S Grand Ave, Los Angeles, CA 90012",
         lat=34.055528762945116,
         lng= -118.24981820211967,
-        duration=30
+        duration=130
         )
     D17 = Default_destination(
         name='Universal Studios Hollywood', 
@@ -182,7 +182,7 @@ def seed_default_destinations():
         address="1635 Woods Dr, West Hollywood, CA 90069",
         lat=34.10069618789019,
         lng= -118.37029130240327,
-        duration=45
+        duration=60
         )
     D19 = Default_destination(
         name='The Last Bookstore', 
@@ -192,7 +192,7 @@ def seed_default_destinations():
         address="453 South Spring Street Ground Floor, Los Angeles, CA 90013",
         lat=34.047769652655475,
         lng= -118.24961723123982,
-        duration=30
+        duration=60
         )
     D20 = Default_destination(
         name='Cathedral of Our Lady of the Angels', 
@@ -252,7 +252,7 @@ def seed_default_destinations():
         address="1225 N 45th St, Seattle, WA 98103",
         lat=47.66137893816357,
         lng= -122.34293765965751,
-        duration=30
+        duration=60
         )
     D26 = Default_destination(
         name='Seattle Public Library', 
@@ -282,7 +282,7 @@ def seed_default_destinations():
         address="N 36th St, Seattle, WA 98103",
         lat=47.651780407736275,
         lng= -122.34773751551042,
-        duration="30"
+        duration=60
         )
     D29 = Default_destination(
         name='The Gum Wall', 
@@ -542,7 +542,7 @@ def seed_default_destinations():
         address="Columbia Rd., London, E2 7RG, United Kingdom",
         lat=51.52926914576562,
         lng= -0.06983045964773821,
-        duration=30
+        duration=60
         )
     D55 = Default_destination(
         name='British Museum', 
@@ -884,16 +884,16 @@ def seed_default_destinations():
         lng= -74.04492383262573,
         duration=120
         )
-    # D89 = Default_destination(
-    #     name='9/11 Memorial and Museum', 
-    #     city_id=9,
-    #     description="Every American should visit the 9/11 Memorial and Museum at least once. As you enter the museum, you descend from the street to bedrock level—the foundation of the former Twin Towers—and are placed in a meditative mindset, forced to recall where you were on that fateful day. The museum itself is a masterful balance: It's grand in scale, contemplative in its construction, and personal in its execution. It pays homage to the enormity of the loss, both physical and spiritual.",
-    #     image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/89.jpeg",
-    #     address="180 Greenwich St. New York, New York, 10007 United States",
-    #     lat=40.71156106425868,
-    #     lng= -74.01245714429756,
-    #     duration=180
-    #     )
+    D89 = Default_destination(
+        name='9-11 Memorial and Museum', 
+        city_id=9,
+        description="Every American should visit the 9/11 Memorial and Museum at least once. As you enter the museum, you descend from the street to bedrock level—the foundation of the former Twin Towers—and are placed in a meditative mindset, forced to recall where you were on that fateful day. The museum itself is a masterful balance: It's grand in scale, contemplative in its construction, and personal in its execution. It pays homage to the enormity of the loss, both physical and spiritual.",
+        image_url="https://wayfinder-images.s3.us-east-2.amazonaws.com/89.jpeg",
+        address="180 Greenwich St. New York, New York, 10007 United States",
+        lat=40.71156106425868,
+        lng= -74.01245714429756,
+        duration=180
+        )
     D90 = Default_destination(
         name='Rockefeller Center', 
         city_id=9,
@@ -995,7 +995,7 @@ def seed_default_destinations():
     db.session.add(D86)
     db.session.add(D87)
     db.session.add(D88)
-    # db.session.add(D89)
+    db.session.add(D89)
     db.session.add(D90)
 
 
