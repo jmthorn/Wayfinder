@@ -1,4 +1,4 @@
-# Welcome to ArchiBnb
+# Welcome to Wayfinder
 
 In this itinerary builder, a user can look up destinations by city and add them to their trip. After adding destinations, an itinerary will be produced, displaying an optimized time schedule of events.
 
