@@ -40,3 +40,12 @@
   padding: 2em;
   align-self: center;
 }
+
+.built-by {
+  text-decoration: none;
+  color: black;
+}
+
+.built-by:hover {
+  color: gray;
+}
