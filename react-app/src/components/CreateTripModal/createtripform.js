@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {createTrip} from '../../store/trips'
 import DatePicker from "react-datepicker";
+import moment from 'moment'
 
 import "react-datepicker/dist/react-datepicker.css";
 import { useHistory } from 'react-router';
@@ -44,9 +45,9 @@ function CreateTripForm({cityId}) {
                   <div className="modal-error">{error}</div>
                 )}
                 <div className="modal-date-inputs">
-                    <DatePicker selected={startDate} placeholderText="Start Date" onChange={(date) => setStartDate(date)} />
+                    <DatePicker selected={startDate} placeholderText="Start Date" onChange={(date) => setStartDate(date)} minDate={moment().toDate()}/>
                     <div className="modal-to">to</div>
-                    <DatePicker selected={endDate} placeholderText="End Date" onChange={(date) => setEndDate(date)} />
+                    <DatePicker selected={endDate} placeholderText="End Date" onChange={(date) => setEndDate(date)} minDate={startDate ? startDate:moment().toDate()}/>
                 </div>
               </label>
               <button className="modal-button" type="submit">{booked}</button>
