@@ -4,7 +4,8 @@
   top: 0;
   background-color: black;
   margin: 0px;
-  position: relative;
+  position: sticky;
+  z-index: 4;
 }
 
 #nav-list {
