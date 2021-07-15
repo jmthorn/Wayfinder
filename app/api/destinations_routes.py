@@ -1,12 +1,12 @@
 from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
-from app.forms import UpdateDestinationsForm
+from app.forms import UpdateDestinationsForm, CreateDestinationsForm
 from app.models import City
 from app.models import Default_destination
 from app.models import Custom_destination
 from sqlalchemy import and_
 from app.models import db
-
+from app.aws import upload_file_to_s3, allowed_file, get_unique_filename
 
 destinations_routes = Blueprint('destinations', __name__)
 
@@ -56,11 +56,33 @@ def destination(destinationName):
 def add_destination():
     userId = current_user.id
     json_data = request.get_json()
-    # print(json_data)
+
+    image = request.files["image_url"]
+    print("IMAGEEEEE BACKENDDDD", image)
+    print("JSON DATA", json_data)
+    # upload image to S3
+
+    if not allowed_file(image.name): 
+        return {"errors": "file type not permitted"}, 400
+
+    image.name = get_unique_filename(image.name)
+
+    upload = upload_file_to_s3(image)
+
+    if "url" not in upload:
+        # if the dictionary doesn't have a url key
+        # it means that there was an error when we tried to upload
+        # so we send back that error message
+        return upload, 400
+
+    url = upload["url"]
+    print("URLLLLLL", url)
+    # create new destination
+
     new_destination = Custom_destination(
         user_id= userId,
         city_id=json_data['cityId'],
-        image_url=json_data['image_url'],
+        image_url=url,
         address=json_data['address'],
         name=json_data['name'],
         lat=json_data['lat'],

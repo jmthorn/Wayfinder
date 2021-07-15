@@ -56,25 +56,39 @@ const remove = (destination) => ({
     return {};
   }
 
-//   create  destination
+//   create  destination 'application/json'
   export const createDestination = (cityId, image_url, address, name, lat, lng, duration, description) => async (dispatch)  => {
+    const formData = new FormData();
+    formData.append("image_url", image_url)
+    formData.append("address", address)
+    formData.append("name", name)
+    formData.append("duration", duration)
+    formData.append("description", description)
+    formData.append("cityId", cityId)
+    formData.append("lat", lat)
+    formData.append("lng", lng)
+
     const response = await fetch(`/api/destinations/`, {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            cityId,
-            image_url,
-            address,
-            name,
-            lat,
-            lng,
-            duration,
-            description
-        }),
+        body: formData,
     });
-
+    // const response = await fetch(`/api/destinations/`, {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify({
+    //         cityId,
+    //         image_url,
+    //         address,
+    //         name,
+    //         lat,
+    //         lng,
+    //         duration,
+    //         description, 
+    //         formData
+    //     }),
+    // });
     const data = await response.json();
     if (data.errors) {
         return data;

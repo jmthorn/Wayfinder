@@ -18,7 +18,7 @@ function CreateDestinationForm({cityId}) {
   const [error, setError] = useState("");
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
-  const [image_url, setImageURL] = useState("");
+  const [image_url, setImage] = useState("");
   const [lat, setLat] = useState("");
   const [lng, setLng] = useState("");
   const [duration, setDuration] = useState("");
@@ -36,9 +36,9 @@ function CreateDestinationForm({cityId}) {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-    
+
     if(!image_url || !address || !name || !duration || !description) { 
-        setError("Your destination is missing data!")
+      setError("Your destination is missing data!")
     } else {
       // Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_KEY);
       apiKey && Geocode.setApiKey(apiKey);
@@ -102,13 +102,13 @@ function CreateDestinationForm({cityId}) {
                     />
             </div>
             <div className="create-trip-div">
-                <label htmlFor="image_url">Image URL</label>
+                <label htmlFor="image_url">Image</label>
                 <input
                     className="create-trip-input"
                     name="image_url"
-                    type="text"
-                    value={image_url}
-                    onChange={(e) => setImageURL(e.target.value)}
+                    type="file"
+                    accept="image/*"
+                    onChange={(e) => setImage(e.target.files[0])}
                 />
             </div>
             <button className="modal-button create-trip-btn" type="submit">{created}</button>
