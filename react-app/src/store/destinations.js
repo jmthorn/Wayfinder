@@ -67,7 +67,9 @@ const remove = (destination) => ({
     formData.append("cityId", cityId)
     formData.append("lat", lat)
     formData.append("lng", lng)
-
+    for (var key of formData.entries()) {
+        console.log(key[0] + ', ' + key[1]);
+    }
     const response = await fetch(`/api/destinations/`, {
         method: 'POST',
         body: formData,

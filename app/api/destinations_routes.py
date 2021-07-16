@@ -55,20 +55,18 @@ def destination(destinationName):
 @login_required
 def add_destination():
     userId = current_user.id
-    json_data = request.get_json()
-
+    print("REQUESTTTTTTTTTTTT", request.files.getlist)
     image = request.files["image_url"]
-    print("IMAGEEEEE BACKENDDDD", image)
-    print("JSON DATA", json_data)
+    print("IMAGEEEEE BACKENDDDD", image.filename)
+
     # upload image to S3
 
-    if not allowed_file(image.name): 
+    if not allowed_file(image.filename): 
         return {"errors": "file type not permitted"}, 400
 
-    image.name = get_unique_filename(image.name)
+    image.filename = get_unique_filename(image.filename)
 
     upload = upload_file_to_s3(image)
-
     if "url" not in upload:
         # if the dictionary doesn't have a url key
         # it means that there was an error when we tried to upload
@@ -76,26 +74,25 @@ def add_destination():
         return upload, 400
 
     url = upload["url"]
-    print("URLLLLLL", url)
     # create new destination
 
     new_destination = Custom_destination(
         user_id= userId,
-        city_id=json_data['cityId'],
+        city_id=request.form["cityId"],
         image_url=url,
-        address=json_data['address'],
-        name=json_data['name'],
-        lat=json_data['lat'],
-        lng=json_data['lng'],
-        duration=json_data['duration'],
-        description=json_data['description'],
+        address=request.form["address"],
+        name=request.form["name"],
+        lat=request.form["lat"],
+        lng=request.form["lng"],
+        duration=request.form["duration"],
+        description=request.form["description"],
     )
 
     db.session.add(new_destination)
     db.session.commit()
     userId = current_user.id
-    default_destinations = Default_destination.query.filter(Default_destination.city_id == json_data['cityId']).all()
-    custom_destinations = Custom_destination.query.filter(and_(Custom_destination.city_id == json_data['cityId'], Custom_destination.user_id == userId)).all()
+    default_destinations = Default_destination.query.filter(Default_destination.city_id == request.form["cityId"]).all()
+    custom_destinations = Custom_destination.query.filter(and_(Custom_destination.city_id == request.form["cityId"], Custom_destination.user_id == userId)).all()
 
     return {"default_destinations": [destination.to_dict() for destination in default_destinations], "custom_destinations": [destination.to_dict() for destination in custom_destinations]}
 
