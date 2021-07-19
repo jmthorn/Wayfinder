@@ -33,35 +33,47 @@ def events(trip_id):
     userId = current_user.id
     events = Event.query.filter(Event.trip_id == trip_id).all()
 
-    # print('+++++++++++++++++++++++++++++++++++++++++++++')
     # Sort events based on distance from eachother:
+
     if len(events) == 0:
         return {"events": []}
 
     apiKey = os.environ.get('GOOGLE_MAPS_KEY')
+
+    # Grab first event from "events" to set a starting point
     firstEvent = events[0]
+    # Query first event from "id" in order to update that event's distance to 0
     event2_to_update = Event.query.get(firstEvent.to_dict()['id'])
     event2_to_update.distance=0
 
     db.session.add(event2_to_update)
     db.session.commit()
+
+    # Initialize "sortedEvents" with first event 
     sortedEvents = [events[0]]
+    #Initialize "newEvents" with the rest of the events
     newEvents = events[1:]
     
+    #Loop through each event in sorted events
     for i, val in enumerate(sortedEvents):
         currentNode = sortedEvents[i]
         closestDist=10000000000000
         closestIndex = ''
+        #For each node in newEvents, loop through to check each one's distance to "currentNode"
         for j, val in enumerate(newEvents):
             nextNode= newEvents[j]
+
+            # Google Distance Matrix API 
             url = f'https://maps.googleapis.com/maps/api/distancematrix/json?origins={currentNode.to_dict()["lat"]},{currentNode.to_dict()["lng"]}&destinations={nextNode.to_dict()["lat"]},{nextNode.to_dict()["lng"]}&key={apiKey}'
             reqs = urlopen(Request(url))
             res = loads(reqs.read().decode("UTF-8"))
+            # Check status to ensure no errors and assign a driving distance 
             status = res['rows'][0]['elements'][0]['status']
             if status == res['rows'][0]['elements'][0]['status'] == "ZERO_RESULTS":
                 duration = 3000
             else:
                 duration = res['rows'][0]['elements'][0]['duration']['value']
+            # Reassign closesDist to new driving distance if it is closer
             if duration < closestDist:
                 closestDist = duration
                 closestIndex = j
@@ -69,27 +81,30 @@ def events(trip_id):
         if closestDist < 1000000000:
 
             chosenEvent = newEvents[closestIndex]
-
+            # Update distance to event and save to database
             event_to_update = Event.query.get(chosenEvent.to_dict()['id'])
             event_to_update.distance=closestDist
 
             db.session.add(event_to_update)
             db.session.commit()
 
+            # Add closest event to sorted Events and remove from newEvents 
             sortedEvents.append(newEvents[closestIndex])
             newEvents = newEvents[:closestIndex] + newEvents[closestIndex+1:]
-
+        #resent the closest distance for the next event
         closestDist=1000000000
         closestIndex = ''
 
-    for i, val in enumerate(sortedEvents):
+    # Future Implementation: Update and utilize "order" in event
 
-            chosenEvent3 = sortedEvents[i]
-            event_to_update = Event.query.get(chosenEvent3.to_dict()['id'])
-            event_to_update.order=i
+    # for i, val in enumerate(sortedEvents):
 
-            db.session.add(event_to_update)
-            db.session.commit()
+    #         chosenEvent3 = sortedEvents[i]
+    #         event_to_update = Event.query.get(chosenEvent3.to_dict()['id'])
+    #         event_to_update.order=i
+
+    #         db.session.add(event_to_update)
+    #         db.session.commit()
 
     return {"events": [event.to_dict() for event in sortedEvents]}
 
