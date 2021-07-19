@@ -55,9 +55,7 @@ def destination(destinationName):
 @login_required
 def add_destination():
     userId = current_user.id
-    print("REQUESTTTTTTTTTTTT", request.files.getlist)
     image = request.files["image_url"]
-    print("IMAGEEEEE BACKENDDDD", image.filename)
 
     # upload image to S3
 
