@@ -57,7 +57,7 @@ def events(trip_id):
     #Loop through each event in sorted events
     for i, val in enumerate(sortedEvents):
         currentNode = sortedEvents[i]
-        closestDist=10000000000000
+        closestDist=float("inf")
         closestIndex = ''
         #For each node in newEvents, loop through to check each one's distance to "currentNode"
         for j, val in enumerate(newEvents):
@@ -78,7 +78,7 @@ def events(trip_id):
                 closestDist = duration
                 closestIndex = j
 
-        if closestDist < 1000000000:
+        if closestDist < float("inf"):
 
             chosenEvent = newEvents[closestIndex]
             # Update distance to event and save to database
@@ -92,7 +92,7 @@ def events(trip_id):
             sortedEvents.append(newEvents[closestIndex])
             newEvents = newEvents[:closestIndex] + newEvents[closestIndex+1:]
         #resent the closest distance for the next event
-        closestDist=1000000000
+        closestDist=float("inf")
         closestIndex = ''
 
     # Future Implementation: Update and utilize "order" in event
